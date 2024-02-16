@@ -5,7 +5,7 @@
 ## Overview
 
 
-The dataset is comprised of ~70,000,000 individual court actions. Given a short natural language description of the action, we are trying to label both the actor as well as the type of action (Case disposed, Motion allowed, Pre-trial Conference, etc.). The end goal is to be able to draw useful relations of court activity (eg. Frequency of a specific ruling by a specific judge given a specific type of case). Our task is to predict categories for missing entries.
+The dataset is comprised of ~70,000,000 individual court actions. Given a short natural language description of the action, we are trying to label both the actor as well as the type of action (Case disposed, Motion allowed, Pre-trial Conference, etc.). "actor" refers to the main entities involved in the case, such as individuals or locations involved, while "action" denotes the specific types of behaviors or activities. The end goal is to be able to draw useful relations of court activity (eg. Frequency of a specific ruling by a specific judge given a specific type of case). Our task is to predict categories for missing entries.
 
 
 %%% Our role within this is to provide the necessary labels.
@@ -18,8 +18,6 @@ The dataset is already partially labeled through a traditional algorithm mainly 
 
 
 ### B. Problem Statement:
-
-*In as direct terms as possible, provide the “Data Science” or "Machine Learning" problem statement version of the overview. Think of this as translating the above into a more technical definition to execute on. eg: a classification problem to segregate users into one of three groups on based on the historical user data available from a publicly available database*
 
 
 For now, we consider this a classification problem to assign an actor and label based on each brief description of a case. We anticipate, however, that upon further analysis of the dataset, it is possible that we would have to generate additional labels. 
