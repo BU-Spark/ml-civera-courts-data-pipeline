@@ -1,6 +1,6 @@
 # Technical Project Document Template
 
-## *Authors, 20xx-Month-Day vx.x.x-dev*
+## Jeffrey Zhou, Christopher Ziko, Boyang Liu, Jamie Lin, 2024-Feb-15 v1.0.0
 
 ## Overview
 
