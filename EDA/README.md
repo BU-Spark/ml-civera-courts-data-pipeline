@@ -1,7 +1,7 @@
 # EDA
 
 ## Count
-Statistic the number of actions and actors types
+Statistic the number of action and actor types
 ```
 python count.py
 ```
