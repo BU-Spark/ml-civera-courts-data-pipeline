@@ -1,12 +1,12 @@
 import json
 import time
+import os
 
 import pymysql
 from tqdm import tqdm
 
-
 # Load database connection information from a file
-with open('account.yml', 'r') as file:
+with open('cfg/account.yml', 'r') as file:
     lines = file.readlines()
     user = lines[0].strip()
     password = lines[1].strip()
@@ -69,6 +69,9 @@ statistics = {
     "actor_counts": actor_counts
 }
 
+
+os.makedirs("count", exist_ok=True)
+
 # Save the statistics to 'count.json'
-with open('count.json', 'w') as file:
+with open('count/count.json', 'w') as file:
     json.dump(statistics, file, ensure_ascii=False, indent=4)
