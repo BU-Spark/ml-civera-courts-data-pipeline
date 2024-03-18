@@ -1,8 +1,15 @@
 import json
 import matplotlib.pyplot as plt
+import os
+
+
+_dir = "distribution/"
+os.makedirs(_dir, exist_ok=True)
+
+TOPN = -1
 
 # Load data from JSON file
-with open('count.json', 'r') as file:
+with open('count/count.json', 'r') as file:
     data = json.load(file)
 
 action_counts = data['action_counts']
@@ -41,7 +48,10 @@ num_actor_types = len(actor_values)
 
 # Plotting action counts
 plt.figure(figsize=(10, 8))
-plt.barh(action_names[:20], action_values[:20])  # Adjust slice for visibility
+if TOPN == -1:
+    plt.barh(action_names, action_values)  # Adjust slice for visibility
+else:
+    plt.barh(action_names[:TOPN], action_values[:TOPN])  # Adjust slice for visibility
 plt.xlabel('Counts')
 plt.ylabel('Actions')
 plt.title(f'Top 20 Legal Actions Distribution\nNumber of non-empty actions: {non_empty_action_rows}\nNon-empty ratio: {non_empty_action_ratio:.2f}%\nNumber of Action Types: {num_action_types}')
@@ -53,11 +63,17 @@ for index, value in enumerate(action_values[:20]):
 
 # plt.show()
 
-plt.savefig('top_20_legal_actions_distribution.png')
+if TOPN == -1:
+    plt.savefig(_dir + 'legal_actions_distribution.png')
+else:
+    plt.savefig(_dir + f'top_{TOPN}_legal_actions_distribution.png')
 
 # Plotting actor counts
 plt.figure(figsize=(10, 8))
-plt.barh(actor_names[:20], actor_values[:20])  # Adjust slice for visibility
+if TOPN == -1:
+    plt.barh(actor_names, actor_values)  # Adjust slice for visibility
+else:
+    plt.barh(actor_names[:TOPN], actor_values[:TOPN])  # Adjust slice for visibility
 plt.xlabel('Counts')
 plt.ylabel('Actors')
 plt.title(f'Top 20 Legal Actors Distribution\nNumber of non-empty actors: {non_empty_actor_rows}\nNon-empty ratio: {non_empty_actor_ratio:.2f}%\nNumber of Actor Types: {num_actor_types}')
@@ -69,4 +85,7 @@ for index, value in enumerate(actor_values[:20]):
 
 # plt.show()
 
-plt.savefig('top_20_legal_actors_distribution.png')
+if TOPN == -1:
+    plt.savefig(_dir + 'legal_actors_distribution.png')
+else:
+    plt.savefig(_dir + f'top_{TOPN}_legal_actors_distribution.png')
