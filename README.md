@@ -9,3 +9,6 @@ Jamie Lin
 # EDA
 
 [EDA_README](EDA/README.md)
+
+# Method and Experiment
+[EXP_README](code/README.md)

@@ -1,3 +1,6 @@
+import hashlib
+import json
+
 import pymysql
 
 
@@ -41,3 +44,17 @@ def execute_query(cursor, query):
     t = time.time()
     cursor.execute(query)
     print(f"{time.time() - t}s")
+
+
+def get_hash_key(text):
+    return hashlib.md5(text.encode('utf-8')).hexdigest()
+
+
+def load_json(path):
+    with open(path, "r", encoding="utf8") as f:
+        return json.load(f)
+
+
+def dump_json(obj, path, indent=None, **kwargs):
+    with open(path, "w", encoding="utf8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=indent, **kwargs)
