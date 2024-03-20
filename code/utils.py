@@ -39,11 +39,12 @@ def get_connection():
     return connection
 
 
-def execute_query(cursor, query):
+def execute_query(cursor, query, print_t=False):
     import time
     t = time.time()
     cursor.execute(query)
-    print(f"{time.time() - t}s")
+    if print_t:
+        print(f"{time.time() - t}s")
 
 
 def get_hash_key(text):
