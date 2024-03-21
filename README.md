@@ -1,7 +1,14 @@
-# TEMPLATE-base-repo
+# Civera
+The Civera Project for CS549  
+Group members:  
+Jeffrey Zhou  
+Christopher Ziko  
+Boyang Liu  
+Jamie Lin  
 
-Create a new branch from dev, add changes on the new branch you just created.
+# EDA
 
-Open a Pull Request to dev. Add your PM and TPM as reviewers. 
+[EDA_README](EDA/README.md)
 
-At the end of the semester during project wrap up open a final Pull Request to main from dev branch.
+# Method and Experiment
+[EXP_README](code/README.md)
