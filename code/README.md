@@ -31,5 +31,5 @@ Temporally use FAISS (Facebook AI Similarity Search)
   - do similarity search
   - assign labels or create new labels based on the similarity threshold
 
-![db search example](images/vector%20db%20search%20exp.jpg)
+![db search example](images/vector%20db%20search%20ex.jpg)
 
