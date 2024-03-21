@@ -25,6 +25,13 @@ Set the {TopN} at the top of the file
 
 ## Sample Data
 
+There are 73173625 rows of data.  
+Useful columns: 
+- case_action_id: primary key
+- actor
+- action
+- description
+
 We sample data based on the action type.  
 We sample at most {LIMIT} rows per action type.
 

@@ -1,17 +1,21 @@
 ## Sample Data
+Find more details in [EDA_README](../EDA/README.md)
 ```
 python sample.py
 ```
-At present, we sample data based on the action type. We sample at most {LIMIT} rows per action type.
+Experiment on "sampled_dat_limit={LIMIT}.json"
+
+structure:
 ```
-query = f"""
-           SELECT case_id, actor, action, description
-           FROM {table_name}
-           WHERE action = "{action_type}"
-           LIMIT {_limit};
-       """
+{
+  case_action_id: {
+    action:
+    actor:
+    description:
+  },
+  ...
+}
 ```
-We will further experiment on "sampled_data_based_on_actions_limit=10000.json"
 
 ## Embedding
 Temporally use "all-MiniLM-L6-v2", may try other options later
