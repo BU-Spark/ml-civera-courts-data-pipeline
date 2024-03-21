@@ -42,7 +42,7 @@ We will further experiment on "sampled_data_limit={LIMIT}.json"
 python sample_data_v1_in_order.py
 ```
 
-This method is relatively fast, but can only get the first at most LIMIT rows of every action_type.
+This method is relatively faster, but can only get the first at most LIMIT rows of every action_type.
 ```
 query = f"""
            SELECT case_action_id, actor, action, description
