@@ -3,7 +3,7 @@ Find more details in [EDA_README](../EDA/README.md)
 ```
 python sample.py
 ```
-Experiment on "sampled_dat_limit={LIMIT}.json"
+Experiment on "sampled_data_limit={LIMIT}.json"
 
 structure:
 ```
