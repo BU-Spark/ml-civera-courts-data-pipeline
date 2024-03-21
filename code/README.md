@@ -5,7 +5,7 @@ Go to EDA/
 ```
 python sample.py
 ```
-Experiment on "sampled_data_limit={LIMIT}.json"
+Experiment on "EDA/sample/sampled_data_limit={LIMIT}.json"
 
 structure:
 ```
