@@ -1,5 +1,7 @@
 ## Sample Data
 Find more details in [EDA_README](../EDA/README.md)
+
+Go to EDA/
 ```
 python sample.py
 ```
