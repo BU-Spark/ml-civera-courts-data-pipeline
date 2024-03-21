@@ -24,17 +24,48 @@ Set the {TopN} at the top of the file
 ![actor_distribution](distribution/legal_actors_distribution.png)
 
 ## Sample Data
+
+We sample data based on the action type.  
+We sample at most {LIMIT} rows per action type.
+
+We will further experiment on "sampled_data_limit={LIMIT}.json"
+
+### v1: in order 
 ```
-python sample.py
+python sample_data_v1_in_order.py
 ```
-At present, we sample data based on the action type. We sample at most {LIMIT} rows per action type.
+
+This method is relatively fast, but can only get the first at most LIMIT rows of every action_type.
 ```
 query = f"""
-           SELECT case_id, actor, action, description
+           SELECT case_action_id, actor, action, description
            FROM {table_name}
            WHERE action = "{action_type}"
            LIMIT {_limit};
        """
 ```
-We will further experiment on "sampled_data_based_on_actions_limit=10000.json"
+
+### v2: random
+```
+python sample.py
+```
+
+The primary key is "case_action_id", we call it "id"
+- Get ids of every action type and store them
+    - Take relatively longer time than other following steps
+    - Only need to run once
+    - Easy to change {LIMIT} or resample later
+- Sample ids from the id pools
+- Fetch data with id
+    - We can use "WHERE action IN (id1, id2, ...)" rather than "WHERE action = id", which is much faster. 
+
+```
+SELECT case_action_id FROM {table_name}
+    WHERE action = "{action_type}"
+
+SELECT case_action_id, actor, action, description FROM {table_name}
+    WHERE case_action_id in (id1, id2, ...)
+```
+
+
 
