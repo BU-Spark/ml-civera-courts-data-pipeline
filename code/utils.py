@@ -1,5 +1,6 @@
 import hashlib
 import json
+import time
 
 import pymysql
 
@@ -44,7 +45,7 @@ def execute_query(cursor, query, print_t=False):
     t = time.time()
     cursor.execute(query)
     if print_t:
-        print(f"{time.time() - t}s")
+        count_t(t, f"Executing query:\n{query}\n")
 
 
 def get_hash_key(text):
@@ -59,3 +60,30 @@ def load_json(path):
 def dump_json(obj, path, indent=None, **kwargs):
     with open(path, "w", encoding="utf8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=indent, **kwargs)
+
+
+def convert_seconds_to_hms(seconds):
+
+    if seconds < 1:
+        return f"{round(seconds, 4)}s"
+
+    seconds = int(seconds)
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    seconds = seconds % 60
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}"
+
+
+def count_t(start_t, desc="..."):
+    dt = time.time() - start_t
+    print_t = convert_seconds_to_hms(dt)
+    print(f"{desc} takes {print_t}.")
+
+
+def run_and_count_t(f, *args, desc="..."):
+    print(f"{desc} starts")
+    t = time.time()
+    f(*args)
+    dt = time.time() - t
+    print_t = convert_seconds_to_hms(dt)
+    print(f"{desc} takes {print_t}.")
