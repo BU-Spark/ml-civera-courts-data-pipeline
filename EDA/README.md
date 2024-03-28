@@ -104,6 +104,7 @@ Avg time per successful sample:
 - v3_ min-max-step: 0.0281 s (hit rate ~ 0.7)
 
 ## How to run
+Go to EDA/
 ```
 python count.py
 python sample.py
