@@ -56,6 +56,10 @@ query = f"""
 ```
 python sample.py
 ```
+or
+```
+python sample_data_v2_id_pool.py
+```
 
 The primary key is "case_action_id", we call it "id"
 - Get ids of every action type and store them
@@ -74,5 +78,34 @@ SELECT case_action_id, actor, action, description FROM {table_name}
     WHERE case_action_id in (id1, id2, ...)
 ```
 
+### v3: min max step
+```
+python sample_data_v3_min_max.py
+```
+```
+SELECT MIN(case_action_id) AS min_id,
+    MAX(case_action_id) AS max_id FROM {table_name}
+    
+```
+```
+for _id, sample_id in enumerate(tq := tqdm(range(min_id, max_id, step))):
+  tq.set_description(f"{success}/{_id}")
+  cursor.execute(f"""
+      SELECT case_action_id, actor, action, description 
+      FROM {table_name} 
+      WHERE case_action_id = {sample_id}
+  """)
+```
 
+### Summary for sampling
+Avg time per successful sample: 
+- v1_ order limit: 0.0016 s
+- v2_ id random: 0.0028 s (needs minutes to fetch id pools first)
+- v3_ min-max-step: 0.0281 s (hit rate ~ 0.7)
 
+## How to run
+Go to EDA/
+```
+python count.py
+python sample.py
+```
