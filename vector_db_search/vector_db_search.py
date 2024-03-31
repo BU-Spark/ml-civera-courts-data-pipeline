@@ -37,8 +37,12 @@ try:
 
         _limit = 100
         sample_data = load_json(f"sample/sampled_data_limit={_limit}.json")
-        empty_rows = {key: row for key, row in sample_data.items() if row["actor"] == "" or row["actor"] == ""}
-        non_empty_rows = {key: row for key, row in sample_data.items() if row["actor"] != "" and row["actor"] != ""}
+
+        print(len(sample_data))
+        # raise
+
+        empty_rows = {key: row for key, row in sample_data.items() if row["actor"] == "" or row["action"] == ""}
+        non_empty_rows = {key: row for key, row in sample_data.items() if row["actor"] != "" and row["action"] != ""}
 
         for desc, rows in {"empty": empty_rows, "non_empty": non_empty_rows}.items():
 
