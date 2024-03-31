@@ -31,7 +31,15 @@ In this PoC, we aim to demonstrate the effectiveness of our core algorithms and 
 - **Computational Resources**: Large language models require significant computational power, which could present a bottleneck.
 - **Cost Considerations**: Depending on the scale of data and frequency of LLM usage, API calls to these models might incur substantial costs.
 
+## Related code
+- [embed.py](vector_db_search/embed.py)
+- [vector_db_search.py](vector_db_search/vector_db_search.py)
+- [glm_inference.py](vector_db_search/glm_inference.py)
+- [llm.py](vector_db_search/llm.py)
+  - Temporarily, we experiment with ChatGLM3-6B.
+
 ## How to run
+
 - Set up the environment
 ```
 pip install -r requirements
@@ -46,7 +54,6 @@ python embed.py
 python vector_db_search.py
 ```
 - Test LLM prediction performance
-  - Temporarily, we experiment with ChatGLM3-6B.
 ```
 python llm.py
 ```
