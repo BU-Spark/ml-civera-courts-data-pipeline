@@ -11,7 +11,7 @@ from utils import (
 def main():
     table_name = "cdocs_case_action_index"
 
-    embedder = Embedder(load_model=False)
+    embedder = Embedder(load_model=True)
     db = DBFaiss(limit=100)
     db.load()
 
