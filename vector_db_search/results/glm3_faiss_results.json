@@ -1,0 +1,342 @@
+{
+    "217315": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Misc Entry:  Motion for Special process server"
+        },
+        "result": {
+            "actor": "Plaintiff",
+            "action": "Motion to appoint special proc"
+        },
+        "references": [
+            {
+                "case_action_id": 309735,
+                "actor": "Plaintiff",
+                "action": "Motion to appoint special proc",
+                "description": "Motion to appoint special process server (Mass.R.Civ.P. 3[c] & 4) filed by P01  KIRKLAND ALBRECHT & FREDRICKSON, LLC.",
+                "score": 0.7
+            },
+            {
+                "case_action_id": 307400,
+                "actor": "Plaintiff",
+                "action": "Motion to appoint special proc",
+                "description": "Motion to appoint special process server (Mass.R.Civ.P. 3[c] & 4) filed 3/31/11 by P01  DORIS S. MAINVILLE.",
+                "score": 0.68
+            },
+            {
+                "case_action_id": 714845,
+                "actor": "Plaintiff",
+                "action": "Motion to appoint special proc",
+                "description": "Motion to appoint special process server (Civ.P. 3[c] &4)  filed by Jennifer L Stockenberg.",
+                "score": 0.68
+            }
+        ]
+    },
+    "3501559": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Small Claims Filing FeeÂ for claim of $500 or less due.Â Â  Receipt: 40438 Date: 12/13/2013"
+        },
+        "result": {
+            "actor": "Court",
+            "action": "Fee due"
+        },
+        "references": [
+            {
+                "case_action_id": 12289,
+                "actor": "Court",
+                "action": "Fee due",
+                "description": "Small Claims Filing Fee for claim Over $500 but Under $2,000 due Receipt: 55303 Date: 10/02/2013",
+                "score": 0.9
+            },
+            {
+                "case_action_id": 12404,
+                "actor": "Court",
+                "action": "Fee due",
+                "description": "Small Claims Filing Fee for claim Over $500 but Under $2,000 due Receipt: 55304 Date: 10/02/2013",
+                "score": 0.9
+            },
+            {
+                "case_action_id": 12061,
+                "actor": "Court",
+                "action": "Fee due",
+                "description": "Small Claims Filing Fee for claim Over $500 but Under $2,000 due Receipt: 55271 Date: 10/02/2013",
+                "score": 0.89
+            }
+        ]
+    },
+    "12518333": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Citation Filed; Served as Ordered"
+        },
+        "result": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete"
+        },
+        "references": [
+            {
+                "case_action_id": 101352,
+                "actor": "Executor/trix",
+                "action": "Petition for Order of Complete",
+                "description": "Citation on Petition for Order of Complete Settlement requesting to approve an accounting issued.\nfiled 8/1/14",
+                "score": 0.56
+            },
+            {
+                "case_action_id": 93237,
+                "actor": "Personal Representative",
+                "action": "Petition for Order of Complete",
+                "description": "Citation on Petition for Order of Complete Settlement requesting to approve an accounting, determine heirs, compel or approve a distribution issued.",
+                "score": 0.52
+            },
+            {
+                "case_action_id": 98236,
+                "actor": "Personal Representative",
+                "action": "Petition for Order of Complete",
+                "description": "Citation on Petition for Order of Complete Settlement requesting to approve an accounting issued.",
+                "score": 0.51
+            }
+        ]
+    },
+    "13777034": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Capias to remain"
+        },
+        "result": {
+            "actor": "Court",
+            "action": "Capias returned"
+        },
+        "references": [
+            {
+                "case_action_id": 1778188,
+                "actor": "Court",
+                "action": "Capias returned",
+                "description": "Capias Returned.",
+                "score": 0.77
+            },
+            {
+                "case_action_id": 1984206,
+                "actor": "Court",
+                "action": "Capias returned",
+                "description": "Capias returned.",
+                "score": 0.77
+            },
+            {
+                "case_action_id": 2287391,
+                "actor": "Court",
+                "action": "Capias returned",
+                "description": "Capias Returned.",
+                "score": 0.77
+            }
+        ]
+    },
+    "16670135": {
+        "row": {
+            "actor": "Plaintiff",
+            "action": "",
+            "description": "Affidavit of KENNETH C. WILSON in support of motion to TO ATTACH WAGES BY TRUSTEE PROCESS filed by P01  PORTFOLIO RECOVERY ASSOCIATES, LLC."
+        },
+        "result": {
+            "actor": "Plaintiff",
+            "action": "Affidavit in support of motion to ATTACH WAGES"
+        },
+        "references": [
+            {
+                "case_action_id": 161579,
+                "actor": "Plaintiff",
+                "action": "Affidavit in support of motion",
+                "description": "Affidavit of KENNETH C. WILSON in support of motion to ATTACH WAGES BY TRUSTEE PROCESS filed by P01  CITIBANK (SOUTH DAKOTA), N.A..",
+                "score": 0.84
+            },
+            {
+                "case_action_id": 15431,
+                "actor": "Plaintiff",
+                "action": "Affidavit in support of motion",
+                "description": "Affidavit of Kenneth C. Wilson, Esq. in support of motion to attach wages by trustee process filed by LVNV Funding LLC, As Assignee of Citibank (South Dakota), NA / Sears Mastercard.\n",
+                "score": 0.8
+            },
+            {
+                "case_action_id": 47592,
+                "actor": "Plaintiff",
+                "action": "Affidavit in support of motion",
+                "description": "Affidavit of KENNETH C. WILSON in support of motion to TO ATTACH WAGES filed by P01  FIA CARD SERVICES, N.A..",
+                "score": 0.79
+            }
+        ]
+    },
+    "17858747": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Motion for striking affidavit of Kimberly C. Rowland and Thomas A. Schmitz\n\nAttorney: Canevazzi, Esq., Russell P"
+        },
+        "result": {
+            "actor": "Plaintiff",
+            "action": "Motion for striking affidavit"
+        },
+        "references": [
+            {
+                "case_action_id": 31250,
+                "actor": "Defendant",
+                "action": "Affidavit filed",
+                "description": "Affidavit of  Erin Reczek, Esq filed.",
+                "score": 0.66
+            },
+            {
+                "case_action_id": 97744949,
+                "actor": "Plaintiff",
+                "action": "Affidavit of indigency",
+                "description": "Affidavit of Indigency filed by Robert MacDonald",
+                "score": 0.65
+            },
+            {
+                "case_action_id": 1659709,
+                "actor": "Plaintiff",
+                "action": "Motion to amend judgment",
+                "description": "Motion  to Amend Judgment and Execution filed by Anj, Corporation.\nw/Affidavit Supporting",
+                "score": 0.65
+            }
+        ]
+    },
+    "19661713": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "ANSWER: Kevin Cummings(Defendant) & cj."
+        },
+        "result": {
+            "actor": "Defendant",
+            "action": "Answer filed"
+        },
+        "references": [
+            {
+                "case_action_id": 19370,
+                "actor": "Defendant",
+                "action": "Answer filed",
+                "description": "On 3/26/10, Answer filed by DEFENDANTS.",
+                "score": 0.62
+            },
+            {
+                "case_action_id": 241166,
+                "actor": "Defendant",
+                "action": "Original note filed",
+                "description": "Original note or other paper filed (Dist./Mun.Cts.Supp.R.Civ.P. 110): Special Questions For The Jury\n\nApplies To: Mellon, Esq., Jason James (Attorney) on behalf of Ellis, Noah D (Defendant)",
+                "score": 0.61
+            },
+            {
+                "case_action_id": 24224,
+                "actor": "Defendant",
+                "action": "Answer filed",
+                "description": "Answer filed by Tammy Waterman (3rd party defendant).\n\n",
+                "score": 0.6
+            }
+        ]
+    },
+    "19781409": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Execution Writ issued against D01 SHAWN A. PIERRE for judgment total of $2,644.46 plus postjudgment interest of $13.04 plus postjudgment costs of $0.00 minus credits of $0.00, for execution total of $2,657.50 sent to Attorney KENNETH C. WILSON BBO#529910."
+        },
+        "result": {
+            "actor": "Court",
+            "action": "Execution issued"
+        },
+        "references": [
+            {
+                "case_action_id": 7135,
+                "actor": "Court",
+                "action": "Execution issued",
+                "description": "Execution Writ issued against D01 PATRICIA ROSSER for judgment total of $3,155.39 plus postjudgment interest of $15.56 plus postjudgment costs of $0.00 minus credits of $0.00, for execution total of $3,170.95 sent to Attorney ERIN M. RECZEK BBO#658898.",
+                "score": 0.9
+            },
+            {
+                "case_action_id": 8861,
+                "actor": "Court",
+                "action": "Execution issued",
+                "description": "Execution Writ issued against D01 TOBY M. GROOMS for judgment total of $3,961.30 plus postjudgment interest of $11.72 plus postjudgment costs of $0.00 minus credits of $0.00, for execution total of $3,973.02 sent to Attorney JOSEPH E. TITLEBAUM BBO#498740\n.",
+                "score": 0.89
+            },
+            {
+                "case_action_id": 13702,
+                "actor": "Court",
+                "action": "Execution issued",
+                "description": "Execution Writ issued against D01 ALEX MUYAH, ET AL for judgment total of $4,575.55 plus postjudgment interest of $18.05 plus postjudgment costs of $0.00 minus credits of $0.00, for execution total of $4,593.60; sent to P01 CHRISTOPHER T. NATALE.",
+                "score": 0.89
+            }
+        ]
+    },
+    "19794219": {
+        "row": {
+            "actor": "Court",
+            "action": "",
+            "description": "PAYMENT REVIEW SCHEDULED for 07/10/2008 11:00 AM."
+        },
+        "result": {
+            "actor": "Court",
+            "action": "Event scheduled"
+        },
+        "references": [
+            {
+                "case_action_id": 6359,
+                "actor": "Court",
+                "action": "Event scheduled",
+                "description": "PAYMENT REVIEW SCHEDULED FOR 09/01/2011 11:00 AM.",
+                "score": 0.98
+            },
+            {
+                "case_action_id": 6447,
+                "actor": "Court",
+                "action": "Event scheduled",
+                "description": "PAYMENT REVIEW SCHEDULED FOR 09/01/2011 11:00 AM.",
+                "score": 0.98
+            },
+            {
+                "case_action_id": 6498,
+                "actor": "Court",
+                "action": "Event scheduled",
+                "description": "PAYMENT REVIEW SCHEDULED FOR 09/01/2011 11:00 AM.",
+                "score": 0.98
+            }
+        ]
+    },
+    "21320035": {
+        "row": {
+            "actor": "",
+            "action": "",
+            "description": "Application to clerk-magistrate for default judgment against Ivania Francois A/K/A Ivania A. Francois a/k/a Inania Francois a/k/a Yvania Francois who has been defaulted for failure to appear filed by Boston Gas Company D/B/A National Grid (Mass.R.Civ.P.55(b)(1) & 77(b))."
+        },
+        "result": {
+            "actor": "Plaintiff",
+            "action": "Motion for default judgment"
+        },
+        "references": [
+            {
+                "case_action_id": 8331,
+                "actor": "Plaintiff",
+                "action": "Motion for default judgment",
+                "description": "Application to clerk-magistrate for default judgment against D01  BELFIELD D. CAMPBELL who has been defaulted for failure to appear filed by P01  ANJ CORPORATION (Mass.R.Civ.P. 55(b)(1) & 77(b)).",
+                "score": 0.72
+            },
+            {
+                "case_action_id": 6897,
+                "actor": "Plaintiff",
+                "action": "Motion for default judgment",
+                "description": "Application to clerk-magistrate for default judgment against D01  MAURICE BROOMES who has been defaulted for failure to appear filed by P01  FIA CARD SERVICES, N.A (Mass.R.Civ.P. 55(b)(1) & 77(b)).",
+                "score": 0.72
+            },
+            {
+                "case_action_id": 6877,
+                "actor": "Plaintiff",
+                "action": "Motion for default judgment",
+                "description": "Application to clerk-magistrate for default judgment against D01  LUIS G. DIAZ who has been defaulted for failure to appear filed by P01  FIA CARD SERVICES, N.A (Mass.R.Civ.P. 55(b)(1) & 77(b)).",
+                "score": 0.71
+            }
+        ]
+    }
+}

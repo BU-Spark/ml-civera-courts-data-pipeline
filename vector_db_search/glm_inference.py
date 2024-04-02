@@ -18,7 +18,11 @@ def chat(tokenizer, model):
         print(response)
 
 
-def get_response(tokenizer, model, prompt, if_print=False):
+if __name__ != "__main__":
+    tokenizer, model = load()
+
+
+def get_response(prompt, if_print=False):
     response, history = model.chat(tokenizer, prompt, history=[])
     if not if_print:
         return response

@@ -7,16 +7,6 @@ from utils import load_json, dump_json
 
 import glm_inference
 
-tokenizer, model = glm_inference.load()
-
-
-_limit = 100
-
-sample_data = load_json(f"sample/sampled_data_limit={_limit}.json")
-
-empty_rows = {key: row for key, row in sample_data.items() if row["actor"] == "" or row["action"] == ""}
-non_empty_rows = {key: row for key, row in sample_data.items() if row["actor"] != "" and row["action"] != ""}
-
 
 def fill_row_template(row):
     row_template = "<description: {}, actor: {}, action: {}>\n"
@@ -51,59 +41,73 @@ def parse_triplet(triplet_str):
     return parsed_result
 
 
-prompt_template = (
-    "Consider the examples provided below for guidance:\n"
-    "{EXAMPLES}\n"
-    "For the following description, accurately fill in any missing 'actor' or 'action' fields with a concise phrase, limited to 1-3 words. If 'actor' or 'action' is already provided, leave it as is without alteration:\n"
-    "{TRIPLET}\n"
-)
+def main():
+    tokenizer, model = glm_inference.load()
 
-example_n = 5
-prompt_example = ""
-for i, row in enumerate(non_empty_rows.values()):
-    if i == example_n:
-        break
-    # print(row)
-    prompt_example += fill_row_template(row)
-print(prompt_example)
+    _limit = 100
 
+    sample_data = load_json(f"sample/sampled_data_limit={_limit}.json")
 
-test_n = 10
-test_samples = random.sample(list(empty_rows.items()), test_n)
+    empty_rows = {key: row for key, row in sample_data.items() if row["actor"] == "" or row["action"] == ""}
+    non_empty_rows = {key: row for key, row in sample_data.items() if row["actor"] != "" and row["action"] != ""}
 
+    prompt_template = (
+        "Consider the examples provided below for guidance:\n"
+        "{EXAMPLES}\n"
+        "For the following description, accurately fill in any missing 'actor' or 'action' fields with a concise phrase, limited to 1-3 words. If 'actor' or 'action' is already provided, leave it as is without alteration:\n"
+        "{TRIPLET}\n"
+    )
 
-if_print = False
-
-results = {}
-
-for s in tqdm(test_samples):
-    case_action_id, s = s
-
-    # print(f"{case_action_id}: {s}")
-
-    # actor = s["actor"]
-    # action = s["action"]
-    # description = s["description"]
-
-    prompt = prompt_template.format(EXAMPLES=prompt_example, TRIPLET=fill_row_template(s))
-
-    response = glm_inference.get_response(tokenizer, model, prompt)
-
-    if if_print:
-        print("============")
-        print(s)
-        print("Q:")
-        print(prompt.removeprefix(prompt_example))
-        print("A:")
-        print(response)
-        print()
-
-    results[case_action_id] = {
-        "ori": s,
-        "response": parse_triplet(response),
-    }
+    example_n = 5
+    prompt_example = ""
+    for i, row in enumerate(non_empty_rows.values()):
+        if i == example_n:
+            break
+        # print(row)
+        prompt_example += fill_row_template(row)
+    print(prompt_example)
 
 
-os.makedirs("llm", exist_ok=True)
+    test_n = 10
+    test_samples = random.sample(list(empty_rows.items()), test_n)
 
-dump_json(results, "llm/glm3_results.json", indent=4)
+
+    if_print = False
+
+    results = {}
+
+    for s in tqdm(test_samples):
+        case_action_id, s = s
+
+        # print(f"{case_action_id}: {s}")
+
+        # actor = s["actor"]
+        # action = s["action"]
+        # description = s["description"]
+
+        prompt = prompt_template.format(EXAMPLES=prompt_example, TRIPLET=fill_row_template(s))
+
+        response = glm_inference.get_response(tokenizer, model, prompt)
+
+        if if_print:
+            print("============")
+            print(s)
+            print("Q:")
+            print(prompt.removeprefix(prompt_example))
+            print("A:")
+            print(response)
+            print()
+
+        results[case_action_id] = {
+            "ori": s,
+            "response": parse_triplet(response),
+        }
+
+
+    os.makedirs("llm", exist_ok=True)
+
+    dump_json(results, "llm/glm3_results.json", indent=4)
+
+
+if __name__ == '__main__':
+    main()
