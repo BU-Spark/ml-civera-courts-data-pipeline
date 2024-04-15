@@ -1,0 +1,55 @@
+import os
+os.environ["TRANSFORMERS_CACHE"] = "/projectnb/ds549/students/liubyfly/models/"
+
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+device = "cuda"  # the device to load the model onto
+
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2")
+
+
+def infer(prompt, if_print=False):
+    messages = [
+        {"role": "user", "content": prompt},
+    ]
+    encodeds = tokenizer.apply_chat_template(messages, return_tensors="pt")
+
+    model_inputs = encodeds.to(device)
+    model.to(device)
+
+    generated_ids = model.generate(model_inputs, max_new_tokens=1000, do_sample=True)
+    decoded = tokenizer.batch_decode(generated_ids)
+
+    response = decoded[0]
+
+    if if_print:
+        print(response)
+
+    return response
+
+
+def main():
+
+    messages = [
+        {"role": "user", "content": "What is your favourite condiment?"},
+        {"role": "assistant",
+         "content": "Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!"},
+        {"role": "user", "content": "Do you have mayonnaise recipes?"}
+    ]
+
+    encodeds = tokenizer.apply_chat_template(messages, return_tensors="pt")
+
+    model_inputs = encodeds.to(device)
+    model.to(device)
+
+    generated_ids = model.generate(model_inputs, max_new_tokens=1000, do_sample=True)
+    decoded = tokenizer.batch_decode(generated_ids)
+
+    print("Res")
+
+    print(decoded[0])
+
+
+if __name__ == '__main__':
+    main()

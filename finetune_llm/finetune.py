@@ -84,6 +84,26 @@ def prepare_model(model):
     return model
 
 
+def accelerate_model(model):
+    from accelerate import FullyShardedDataParallelPlugin, Accelerator
+    from torch.distributed.fsdp.fully_sharded_data_parallel import FullOptimStateDictConfig, FullStateDictConfig
+
+    fsdp_plugin = FullyShardedDataParallelPlugin(
+        state_dict_config=FullStateDictConfig(offload_to_cpu=True, rank0_only=False),
+        optim_state_dict_config=FullOptimStateDictConfig(offload_to_cpu=True, rank0_only=False),
+    )
+
+    accelerator = Accelerator(fsdp_plugin=fsdp_plugin)
+
+    if torch.cuda.device_count() > 1:  # If more than 1 GPU
+        model.is_parallelizable = True
+        model.model_parallel = True
+
+    model = accelerator.prepare_model(model)
+
+    return model
+
+
 def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
     project = "civera-finetune"
     base_model_name = "mistral"
@@ -107,7 +127,7 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
             # logging_strategy="epoch",  # Log metrics at the end of each epoch
             logging_strategy="steps",
             logging_steps=50,
-            logging_dir="./logs",  # Directory where logs will be stored
+            logging_dir=f"{output_dir}/logs",  # Directory where logs will be stored
             save_strategy="epoch",  # Save model checkpoints at the end of each epoch
             evaluation_strategy="epoch",  # Evaluate the model at the end of each epoch
             eval_steps=None,  # No need to set eval_steps since the strategy is based on epochs
@@ -185,6 +205,9 @@ def main():
     # model
     model = AutoModelForCausalLM.from_pretrained(model_tokenizer_name_or_path)
     model = prepare_model(model)
+
+    # accelerate
+    model = accelerate_model(model)
 
     # train
     train(model, tokenizer, train_dataset, val_dataset)
