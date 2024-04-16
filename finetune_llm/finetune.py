@@ -1,5 +1,5 @@
 import os
-MODEL_PATH = "/projectnb/ds549/students/liubyfly/models/"
+MODEL_PATH = "/projectnb/ds549/projects/civera/models/"
 os.environ["TRANSFORMERS_CACHE"] = MODEL_PATH
 
 from datetime import datetime
