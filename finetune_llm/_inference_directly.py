@@ -1,5 +1,5 @@
 import os
-os.environ["TRANSFORMERS_CACHE"] = "/projectnb/ds549/projects/civera/models/"
+os.environ["TRANSFORMERS_CACHE"] = "/projectnb/ds549/students/liubyfly/models/"
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 

@@ -2,7 +2,7 @@ import os
 
 import torch
 
-MODEL_PATH = "/projectnb/ds549/projects/civera/models/"
+MODEL_PATH = "/projectnb/ds549/students/liubyfly/models/"
 os.environ["TRANSFORMERS_CACHE"] = MODEL_PATH
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
