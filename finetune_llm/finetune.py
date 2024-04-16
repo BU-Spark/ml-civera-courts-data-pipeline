@@ -1,8 +1,8 @@
 import os
-from datetime import datetime
-
 MODEL_PATH = "/projectnb/ds549/students/liubyfly/models/"
 os.environ["TRANSFORMERS_CACHE"] = MODEL_PATH
+
+from datetime import datetime
 
 import time
 import json
@@ -28,15 +28,14 @@ class CiveraDataset(Dataset):
 
     @staticmethod
     def prompt_triplet(triplet):
-
         prompt_template = (
-                "[INST]"
-                "Use precise words to summarize the 'actor' and 'action' of the description: {TRIPLET}\n"
-                f"'actor' is an abstract entity in the legal case.\n"
-                f"'action' is a summary of the behavior in legal events, which is the actor's action.\n"
-                f"If 'actor' or 'action' is not empty, directly use it as the output."
-                "Your output should be a json dict with two keys: 'actor' and 'action'."
-                "[/INST]"
+            "[INST]"
+            "Use precise words to summarize the 'actor' and 'action' of the description: {TRIPLET}\n"
+            f"'actor' is an abstract entity in the legal case.\n"
+            f"'action' is a summary of the behavior in legal events, which is the actor's action.\n"
+            f"If 'actor' or 'action' is not empty, directly use it as the output."
+            "Your output should be a json dict with two keys: 'actor' and 'action'."
+            "[/INST]"
         )
 
         prompt = prompt_template.format(TRIPLET={"actor": "", "action": "", "description": triplet["description"]})
@@ -54,6 +53,7 @@ class CiveraDataset(Dataset):
 
     def __getitem__(self, idx):
         prompt, answer = self.prompt_triplet(self.triplets[idx])
+        # return self.tokenizer(self.formatting_func(prompt, answer))
         return self.tokenizer(self.formatting_func(prompt, answer))
 
 
@@ -110,6 +110,15 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
     run_name = base_model_name + "-" + project
     output_dir = f"{MODEL_PATH}/" + run_name
 
+    _i = 0
+    while True:
+        if os.path.isdir(output_dir + f"/{_i}"):
+            _i += 1
+            continue
+        output_dir = output_dir + f"/{_i}"
+        break
+    print(output_dir)
+
     trainer = transformers.Trainer(
         model=model,
         train_dataset=tokenized_train_dataset,
@@ -126,7 +135,7 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
             optim="paged_adamw_8bit",  # Use the 8-bit version of AdamW optimizer for efficient memory usage
             # logging_strategy="epoch",  # Log metrics at the end of each epoch
             logging_strategy="steps",
-            logging_steps=50,
+            logging_steps=25,
             logging_dir=f"{output_dir}/logs",  # Directory where logs will be stored
             save_strategy="epoch",  # Save model checkpoints at the end of each epoch
             evaluation_strategy="epoch",  # Evaluate the model at the end of each epoch
@@ -188,12 +197,31 @@ def main():
     # dataset
     limit = 100
     id2triplet = load_data(_limit=limit)
-    triplets = [triplet for _id, triplet in id2triplet.items()]
 
-    # Split data into train, validation, and test
-    # 6:2:2
-    _train_val, test_triplets = train_test_split(triplets, test_size=1/5, random_state=42)
-    train_triplets, val_triplets = train_test_split(_train_val, test_size=1/4, random_state=42)
+    os.makedirs("./data", exist_ok=True)
+    path = f"./data/id_limit={limit}.json"
+    if os.path.isfile(path):
+        print("Loading ids")
+        train_val_test = load_json(path)
+
+    else:
+        # Split data into train, validation, and test
+        # 6:2:2
+        _train_val_ids, test_ids = train_test_split(list(id2triplet.keys()), test_size=1 / 5, random_state=42)
+        train_ids, val_ids = train_test_split(_train_val_ids, test_size=1 / 4, random_state=42)
+
+        train_val_test = {
+            "train": train_ids,
+            "val": val_ids,
+            "test": test_ids,
+        }
+
+        print("Dumping ids")
+        dump_json(train_val_test, path)
+
+    train_triplets = [id2triplet[_id] for _id in train_val_test["train"]]
+    val_triplets = [id2triplet[_id] for _id in train_val_test["val"]]
+    test_triplets = [id2triplet[_id] for _id in train_val_test["test"]]
 
     train_dataset = CiveraDataset(tokenizer, train_triplets)
     val_dataset = CiveraDataset(tokenizer, val_triplets)
@@ -207,7 +235,7 @@ def main():
     model = prepare_model(model)
 
     # accelerate
-    model = accelerate_model(model)
+    # model = accelerate_model(model)
 
     # train
     train(model, tokenizer, train_dataset, val_dataset)
