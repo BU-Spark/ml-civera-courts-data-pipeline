@@ -34,7 +34,10 @@ class Instructor:
         self.model.train()
 
         for inputs, targets in tqdm(dataloader, disable=self.args.backend, ascii=' >='):
-            inputs = {k: v.to(self.args.device) for k, v in inputs.items()}
+            if isinstance(inputs, tuple):  
+                inputs = {k: v.to(self.args.device) for input_dict in inputs for k, v in input_dict.items()}
+            else:  
+                inputs = {k: v.to(self.args.device) for k, v in inputs.items()}
             targets = targets.to(self.args.device)
 
             optimizer.zero_grad()
@@ -57,7 +60,10 @@ class Instructor:
         self.model.eval()
         with torch.no_grad():
             for inputs, targets in dataloader:
-                inputs = {k: v.to(self.args.device) for k, v in inputs.items()}
+                if isinstance(inputs, tuple):  
+                    inputs = {k: v.to(self.args.device) for input_dict in inputs for k, v in input_dict.items()}
+                else:  
+                    inputs = {k: v.to(self.args.device) for k, v in inputs.items()}
                 targets = targets.to(self.args.device)
                 outputs = self.model(inputs)
                 loss = criterion(outputs, targets)
@@ -70,6 +76,7 @@ class Instructor:
         accuracy = correct_predictions / total_samples
 
         return average_loss, accuracy
+
 
     def run(self):
         try:
