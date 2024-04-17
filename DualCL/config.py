@@ -12,6 +12,7 @@ def get_config():
     parser.add_argument('--data_dir', type=str, default='data', help='Directory containing the dataset')
     parser.add_argument('--dataset', type=str, default='cdocs_case_action_index', help='Name of the table in your database')
     parser.add_argument('--model_name', type=str, default='google-bert/bert-base-uncased', help='Type of model architecture')
+    parser.add_argument('--method', type=str, default='dualcl', help='Method for training (e.g., ce, scl, dualcl)')
     parser.add_argument('--train_batch_size', type=int, default=16, help='Batch size for training')
     parser.add_argument('--test_batch_size', type=int, default=64, help='Batch size for testing')
     parser.add_argument('--num_epoch', type=int, default=100, help='Number of training epochs')
@@ -39,7 +40,7 @@ def get_config():
         num_classes = len(results)
         args.num_classes = num_classes
     
-        log_name = '{}_{}_{}.log'.format(args.dataset, args.model_name, datetime.now().strftime('%Y-%m-%d_%H-%M-%S')[2:])
+        log_name = '{}_{}_{}.log'.format(args.dataset, args.model_name.replace('/', '_'), datetime.now().strftime('%Y-%m-%d_%H-%M-%S')[2:])
         args.log_name = os.path.join(args.log_dir, log_name)
         
         if not os.path.exists(args.log_dir):
@@ -50,7 +51,7 @@ def get_config():
         logger.addHandler(logging.StreamHandler(sys.stdout))
         logger.addHandler(logging.FileHandler(args.log_name))
         
-        return args, logger
+        return args, logger, connection
     
     except Exception as e:
         print(f"Error: {e}")

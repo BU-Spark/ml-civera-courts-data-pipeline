@@ -9,11 +9,12 @@ from loss import CELoss, SupConLoss, DualLoss
 from transformers import AutoTokenizer, AutoModel, AutoModelForMaskedLM
 
 class Instructor:
-    def __init__(self, args, logger):
+    def __init__(self, args, logger, connection):
         self.args = args
         self.logger = logger
+        self.connection = connection
         
-        if args.model_name == 'bert':
+        if args.model_name == 'google-bert/bert-base-uncased':
             self.tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-uncased", use_auth_token=True)
             self.model = AutoModelForMaskedLM.from_pretrained("google-bert/bert-base-uncased", use_auth_token=True)
         else:
@@ -31,28 +32,28 @@ class Instructor:
     def _train(self, dataloader, criterion, optimizer):
         train_loss, n_correct, n_train = 0, 0, 0
         self.model.train()
-        
+
         for inputs, targets in tqdm(dataloader, disable=self.args.backend, ascii=' >='):
             inputs = {k: v.to(self.args.device) for k, v in inputs.items()}
             targets = targets.to(self.args.device)
-            
+
             optimizer.zero_grad()
             outputs = self.model(inputs)
             loss = criterion(outputs, targets)
             loss.backward()
             optimizer.step()
-            
+
             train_loss += loss.item() * targets.size(0)
             n_correct += (torch.argmax(outputs['predicts'], -1) == targets).sum().item()
             n_train += targets.size(0)
-        
+
         return train_loss / n_train, n_correct / n_train
 
     def _test(self, dataloader, criterion):
         test_loss = 0
         correct_predictions = 0
         total_samples = 0
-        
+
         self.model.eval()
         with torch.no_grad():
             for inputs, targets in dataloader:
@@ -64,17 +65,18 @@ class Instructor:
                 _, predicted_labels = torch.max(outputs['predicts'], 1)
                 correct_predictions += (predicted_labels == targets).sum().item()
                 total_samples += targets.size(0)
-        
+
         average_loss = test_loss / total_samples
         accuracy = correct_predictions / total_samples
-        
+
         return average_loss, accuracy
 
     def run(self):
         try:
             train_dataloader, test_dataloader = load_data_from_mysql(
-                connection=self.args.connection,
-                query="SELECT DISTINCT actor, action FROM cdocs_case_action_index",
+                query="""SELECT actor, action, description
+                        FROM cdocs_case_action_index
+                        LIMIT 10000""",
                 tokenizer=self.tokenizer,
                 model_name=self.args.model_name,
                 method=self.args.method,
@@ -125,6 +127,6 @@ def save_model(model, save_dir='~/Documents/saved_models', filename='model.pth')
     print(f"Model saved at: {filepath}")
 
 if __name__ == '__main__':
-    args, logger = get_config()
-    ins = Instructor(args, logger)
+    args, logger, connection = get_config()
+    ins = Instructor(args, logger, connection)
     ins.run()

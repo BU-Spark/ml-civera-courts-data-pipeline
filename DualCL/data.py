@@ -5,8 +5,8 @@ import mysql.connector
 
 class MyDataset(Dataset):
     def __init__(self, raw_data, label_dict, tokenizer, model_name, method):
-        label_list = list(label_dict.keys()) if method not in ['ce', 'scl'] else []
-        sep_token = ['[SEP]'] if model_name == 'bert' else ['</s>']
+        label_list = list(label_dict.keys()) if method in ['dualcl'] else []
+        sep_token = ['[SEP]'] if model_name == 'google-bert/bert-base-uncased' else ['</s>']
         dataset = []
         for data in raw_data:
             tokens = data['description'].lower().split(' ')
@@ -71,17 +71,18 @@ def close_database_connection(connection):
     if connection is not None and connection.is_connected():
         connection.close()
 
-def load_data_from_mysql(connection, tokenizer, model_name, method, train_batch_size, test_batch_size, workers):
+
+def load_data_from_mysql(query, tokenizer, model_name, method, train_batch_size, test_batch_size, workers):
+    connection = establish_database_connection("masscourtsplus.org", "buspark", "U@5p1r3!", "wp_courtdocs")
+    if connection is None:
+        return None, None
+    
     try:
         cursor = connection.cursor(dictionary=True)
-        cursor.execute("""
-            SELECT actor, action, description
-            FROM cdocs_case_action_index
-            TABLESAMPLE BERNOULLI(1)
-        """)
+        cursor.execute(query)
+
         raw_data = cursor.fetchall()
-        
-        label_dict = create_label_dict(raw_data)  
+        label_dict, _, _ = create_label_dict(raw_data)  
 
         trainset = MyDataset(raw_data, label_dict, tokenizer, model_name, method)
         testset = MyDataset(raw_data, label_dict, tokenizer, model_name, method)
