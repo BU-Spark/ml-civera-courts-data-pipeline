@@ -1,0 +1,11 @@
+"7010531": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Appointment of Tr",
+            "description": "Petition for Appointment of Trustee"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Appointment of Tr"
+        }
+    },

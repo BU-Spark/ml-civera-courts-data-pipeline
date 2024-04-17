@@ -82,4 +82,4 @@ quit()
 
 os.makedirs("results/", exist_ok=True)
 
-dump_json(results, f"results/Mistral_limit={limit}.json", indent=4)
+dump_json(results, f"results/Mistral_direct_limit={limit}.json", indent=4)

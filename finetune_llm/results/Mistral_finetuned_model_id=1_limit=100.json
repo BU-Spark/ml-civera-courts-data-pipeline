@@ -1,0 +1,90 @@
+{
+    "49410847": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Demand for Jury Trial",
+            "description": "Jury trial claim on all issues endorsed upon pleading by D01  MARK LAMBERT (G.L. c.231 Â§103; Mass.R.Civ.P. 38(b))."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Jury trial claim on all issues endorsed upon pleading by D01  MARK LAMBERT (G.L. c.231 Â§103; Mass.R.Civ.P. 38(b)).}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Defendant\", \"action\": \"Demand for Jury Trial\"}\n # SUMMARY: The plaintiff has acknowledged that a jury trial will be requested on all issues. # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # The defendant has demanded a trial by jury on all issues. # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"
+    },
+    "6786528": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Petition for Administration}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Executrix/trix\", \"action\": \"Petition for Administration\"}\n In this legal case, The actress is the executrix/trix, and the action is an application for probate of a will and appointment of an executor/trix.</s>"
+    },
+    "29980671": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Judgment debtor able to pay",
+            "description": "Judgment debtor D01  ANDREW R. KEATON found, after examination on oath, to be currently able to pay on judgment in the amount of $150.00 per month beginning on 10/05/2007 ( Whalen, AC-M James M. )."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Judgment debtor D01  ANDREW R. KEATON found, after examination on oath, to be currently able to pay on judgment in the amount of $150.00 per month beginning on 10/05/2007 ( Whalen, AC-M James M. ).}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Court\", \"action\": \"Judgment debtor able to pay\"}\n ### Alternative answer: {\"actor\": \"Court\", \"action\": \"Ability to pay judgment\"}\n # If the actor or action is empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'.[/INST] ### Answer: {\"actor\": \"Court\", \"action\": \"Judgment debtor able to pay\"}\n ### Alternative answer: {\"actor\": \"Court\", \"action\": \"Ability to pay judgment\"}</s>"
+    },
+    "8819226": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Waiver of jury trial",
+            "description": "Waiver of jury filed by Mary Cenotti.\n"
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Waiver of jury filed by Mary Cenotti.\n}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Defendant\", \"action\": \"Waiver of jury trial\"}\n In the summaries that follow, the 'actor' is an abstract entity in the legal case, and the 'action' is a summary of the behavior in legal events. For example, \"Defendant's Motion to Compel Discovery\" is an action summarizing behavior in the legal event. When the 'actor' or 'action' is not empty, directly use it as the output. If the 'actor' or 'action' needs further explanation, provide a summary in the 'description' which will be shown in the Output and TurboCV. Your output should be a json dict with two keys: 'actor' and 'action'. [/ ### Answer: {\"actor\": \"Defendant\", \"action\": \"Waiver of jury trial\"}]] It is always output as a list with one dict. If there are multiple events, each one will have its own dict in the list. In case there is no actor or action, your output should be {\"actor\": \"\", \"action\": \"\"}. [/INST Summary: DEFENDANT's Waiver of jury trial.\n\nINST Summary: Defendant's"
+    },
+    "79964527": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Answer to counterclaim filed",
+            "description": "Answer to counterclaim of Gregory Goguen filed by Ally Financial Inc.."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Answer to counterclaim of Gregory Goguen filed by Ally Financial Inc..}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Answer to counterclaim filed\"}\n ### [Summary]: The plaintiff files an answer to defendant's counterclaim.</s>"
+    },
+    "1037269": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Request to not dismiss",
+            "description": "Plaintiff reports that case is active and requests that it not be dismissed for failure to act on default (Joint Standing Order 1-04(V)(B))."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Plaintiff reports that case is active and requests that it not be dismissed for failure to act on default (Joint Standing Order 1-04(V)(B)).}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Request to not dismiss\"}\n\n In case information is incomplete, precise summary of the actor and action is not possible, the output should be an empty dict: {\"actor\": \"\", \"action\": \"\"}\n Your output should be a json dict with two keys: 'actor' and 'action'. [/INST] ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Request to not dismiss\"}\n\n In case information is incomplete, precise summary of the actor and action is not possible, the output should be an empty dict: {\"actor\": \"\", \"action\": \"\"}\n Your output should be a json dict with two keys: 'actor' and 'action'. [\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Request to not dismiss\"}\n\n In case information is incomplete, precise summary of the actor and action is not possible, the output should be an empty dict: {\"actor\": \"\", \"action\": \"\"}\n Your output should be a json dict with two keys: 'actor' and 'action'. [\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Request to not dismiss"
+    },
+    "6238114": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Request for admissions filed",
+            "description": "Request for admissions filed by Citibank, N.A. (Mass.R.Civ.P. 36)\n\n"
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Request for admissions filed by Citibank, N.A. (Mass.R.Civ.P. 36)\n\n}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Request for admissions filed\"}\n     [/INST] In this case, the plaintiff has filed a request for admissions. And here's the output: {\"actor\": \"Plaintiff\", \"action\": \"Request for admissions filed\"}</s>"
+    },
+    "709938": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to appoint special proc",
+            "description": "Motion to appoint special process server (Mass.R.Civ.P. 3[c] & 4) filed by P01  LINCOLN PROPERTY CO.."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Motion to appoint special process server (Mass.R.Civ.P. 3[c] & 4) filed by P01  LINCOLN PROPERTY CO..}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Motion to appoint special proc\"}\n\n In the original legal document, the 'actor' is \"Plaintiff\" and the 'action' is \"Motion to appoint special process server\".</s>"
+    },
+    "5186995": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to amend judgment",
+            "description": "Motion  to amend judgment and execution filed by CACH, LLC.\n"
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Motion  to amend judgment and execution filed by CACH, LLC.\n}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Motion to amend judgment\"}\n ### Answer: {\"actor\": \"Plaintiff\", \"action\": \"Motion to amend judgment and execution\"}</s>"
+    },
+    "1160847": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Memorandum filed",
+            "description": "Memorandum filed by D02  BURBA DENTAL PARTNERS, LLP."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Memorandum filed by D02  BURBA DENTAL PARTNERS, LLP.}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Defendant\", \"action\": \"Memorandum filed\"}\n\n Your result should be a json dict with two keys: 'actor' and 'action'. In this case, the answer is ['Defendant', 'Memorandum filed'].</s>"
+    },
+    "29640837": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Answer filed",
+            "description": "Answer filed by D01  FRANCES L. FERRARO."
+        },
+        "answer": "<s> [INST] Use precise words to summarize the 'actor' and 'action' of the description: {'actor': '', 'action': '', 'description':Answer filed by D01  FRANCES L. FERRARO.}\n'actor' is an abstract entity in the legal case.\n'action' is a summary of the behavior in legal events, which is the actor's action.\nIf 'actor' or 'action' is not empty, directly use it as the output.Your output should be a json dict with two keys: 'actor' and 'action'. [/INST]\n ### Answer: {\"actor\": \"Defendant\", \"action\": \"Answer filed\"}\n ### ### In the given legal event, the role of the abstract entity and summary of behavior is:\n ### ### {actor: 'Defendant', action: 'Answer filed'}</s>"
+    }
+}

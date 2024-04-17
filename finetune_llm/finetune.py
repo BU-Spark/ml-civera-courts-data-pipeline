@@ -45,7 +45,7 @@ class CiveraDataset(Dataset):
 
     @staticmethod
     def formatting_func(prompt, answer):
-        text = f"### Question: {prompt}\n ### Answer: {answer}"
+        text = f"<s>{prompt}\n ### Answer: {answer}</s>"
         return text
 
     def __len__(self):
@@ -129,7 +129,7 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
             per_device_train_batch_size=2,  # Batch size per device during training
             gradient_accumulation_steps=10,  # Number of steps to accumulate gradients before updating weights
             gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
-            num_train_epochs=1,  # Set the number of training epochs
+            num_train_epochs=5,  # Set the number of training epochs
             learning_rate=2.5e-5,  # Set a small learning rate for fine-tuning
             bf16=True,  # Enable bfloat16 mixed precision training
             optim="paged_adamw_8bit",  # Use the 8-bit version of AdamW optimizer for efficient memory usage
