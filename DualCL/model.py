@@ -16,16 +16,16 @@ class Transformer(nn.Module):
     def forward(self, inputs):
         raw_outputs = self.base_model(**inputs)
         hiddens = raw_outputs.last_hidden_state
-        cls_feats = hiddens[:, 0, :]
+        actor_action_feats = hiddens[:, 0, :]
         if self.method in ['ce', 'scl']:
             label_feats = None
-            predicts = self.linear(self.dropout(cls_feats))
+            predicts = self.linear(self.dropout(actor_action_feats))
         else:
             label_feats = hiddens[:, 1:self.num_classes+1, :]
-            predicts = torch.einsum('bd,bcd->bc', cls_feats, label_feats)
+            predicts = torch.einsum('bd,bcd->bc', actor_action_feats, label_feats)
         outputs = {
             'predicts': predicts,
-            'cls_feats': cls_feats,
+            'actor_action_feats': actor_action_feats,
             'label_feats': label_feats
         }
         return outputs

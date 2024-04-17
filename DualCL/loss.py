@@ -6,24 +6,25 @@ class CELoss(nn.Module):
 
     def __init__(self):
         super().__init__()
-        self.xent_loss = nn.CrossEntropyLoss()
+        self.classification_loss = nn.CrossEntropyLoss()
 
     def forward(self, outputs, targets):
-        return self.xent_loss(outputs['predicts'], targets)
+        return self.classification_loss(outputs['predicts'], targets)
 
 class SupConLoss(nn.Module):
 
     def __init__(self, alpha, temp):
         super().__init__()
-        self.xent_loss = nn.CrossEntropyLoss()
+        self.classification_loss = nn.CrossEntropyLoss()
         self.alpha = alpha
         self.temp = temp
 
-    def nt_xent_loss(self, anchor, target, labels):
+    def contrastive_loss(self, anchor, target, labels):
         with torch.no_grad():
             labels = labels.unsqueeze(-1)
             mask = torch.eq(labels, labels.transpose(0, 1))
             mask = mask ^ torch.diag_embed(torch.diag(mask))
+        
         anchor_dot_target = torch.einsum('bd,cd->bc', anchor, target) / self.temp
         anchor_dot_target = anchor_dot_target - torch.diag_embed(torch.diag(anchor_dot_target))
         logits_max, _ = torch.max(anchor_dot_target, dim=1, keepdim=True)
@@ -38,10 +39,10 @@ class SupConLoss(nn.Module):
         return loss
 
     def forward(self, outputs, targets):
-        normed_cls_feats = F.normalize(outputs['cls_feats'], dim=-1)
-        ce_loss = (1 - self.alpha) * self.xent_loss(outputs['predicts'], targets)
-        cl_loss = self.alpha * self.nt_xent_loss(normed_cls_feats, normed_cls_feats, targets)
-        return ce_loss + cl_loss
+        normed_actor_action_feats = F.normalize(outputs['cls_feats'], dim=-1)
+        ce_loss = (1 - self.alpha) * self.classification_loss(outputs['predicts'], targets)
+        con_loss = self.alpha * self.contrastive_loss(normed_actor_action_feats, normed_actor_action_feats, targets)
+        return ce_loss + con_loss
 
 class DualLoss(SupConLoss):
 
@@ -49,10 +50,10 @@ class DualLoss(SupConLoss):
         super().__init__(alpha, temp)
 
     def forward(self, outputs, targets):
-        normed_cls_feats = F.normalize(outputs['cls_feats'], dim=-1)
+        normed_actor_action_feats = F.normalize(outputs['cls_feats'], dim=-1)
         normed_label_feats = F.normalize(outputs['label_feats'], dim=-1)
         normed_pos_label_feats = torch.gather(normed_label_feats, dim=1, index=targets.reshape(-1, 1, 1).expand(-1, 1, normed_label_feats.size(-1))).squeeze(1)
-        ce_loss = (1 - self.alpha) * self.xent_loss(outputs['predicts'], targets)
-        cl_loss_1 = 0.5 * self.alpha * self.nt_xent_loss(normed_pos_label_feats, normed_cls_feats, targets)
-        cl_loss_2 = 0.5 * self.alpha * self.nt_xent_loss(normed_cls_feats, normed_pos_label_feats, targets)
-        return ce_loss + cl_loss_1 + cl_loss_2
+        ce_loss = (1 - self.alpha) * self.classification_loss(outputs['predicts'], targets)
+        con_loss_1 = 0.5 * self.alpha * self.contrastive_loss(normed_pos_label_feats, normed_actor_action_feats, targets)
+        con_loss_2 = 0.5 * self.alpha * self.contrastive_loss(normed_actor_action_feats, normed_pos_label_feats, targets)
+        return ce_loss + con_loss_1 + con_loss_2
