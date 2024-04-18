@@ -155,9 +155,12 @@ def main():
     parser.add_argument("--id", type=int, default=3, help="finetuned model id")
     parser.add_argument("--limit", type=int, default=1000, help="finetuned model id")
     args = parser.parse_args()
-    model_id = args.id
 
+    print(args)
+
+    model_id = args.id
     limit = args.limit
+
     test_id2triplets = get_data(limit=limit)
 
     ft_model, tokenizer = load_model_tokenizer(model_id)
@@ -167,7 +170,7 @@ def main():
     res_path = f"results/Mistral_finetuned_model_id={model_id}_limit={limit}.json"
 
     if_continue = True
-    if if_continue:
+    if if_continue and os.path.isfile(res_path):
         results = load_json(res_path)
     else:
         results = {}
