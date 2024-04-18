@@ -1,3 +1,4 @@
+import argparse
 import os
 MODEL_PATH = "/projectnb/ds549/students/liubyfly/models/"
 os.environ["TRANSFORMERS_CACHE"] = MODEL_PATH
@@ -104,7 +105,8 @@ def accelerate_model(model):
     return model
 
 
-def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
+def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset, report_to=None):
+
     project = "civera-finetune"
     base_model_name = "mistral"
     run_name = base_model_name + "-" + project
@@ -118,6 +120,15 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
         output_dir = output_dir + f"/{_i}"
         break
     print(output_dir)
+
+    if report_to == "wandb":
+        print("Report To Wandb")
+        import wandb
+        wandb.login()
+
+        wandb_project = f"civera-finetune-model_id={_i}"
+        if len(wandb_project) > 0:
+            os.environ["WANDB_PROJECT"] = wandb_project
 
     trainer = transformers.Trainer(
         model=model,
@@ -141,7 +152,7 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset):
             evaluation_strategy="epoch",  # Evaluate the model at the end of each epoch
             eval_steps=None,  # No need to set eval_steps since the strategy is based on epochs
             do_eval=True,  # Perform evaluation at the end of each epoch
-            # report_to="wandb",  # Uncomment to use Weights & Biases for monitoring, if desired
+            report_to=report_to,  # "wandb"  # Uncomment to use Weights & Biases for monitoring, if desired
             run_name=f"{run_name}-{datetime.now().strftime('%Y-%m-%d-%H-%M')}",  # Name the training run
             disable_tqdm=True,
         ),
@@ -189,13 +200,22 @@ def print_trainable_parameters(model):
 
 
 def main():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--limit", default=100, type=int)
+    parser.add_argument("--wandb", action="store_true")
+    args = parser.parse_args()
+    print(args)
+    print("=" * 30)
+    print()
+
     model_tokenizer_name_or_path = "mistralai/Mistral-7B-Instruct-v0.2"
 
     tokenizer = AutoTokenizer.from_pretrained(model_tokenizer_name_or_path)
     tokenizer.pad_token = tokenizer.eos_token
 
     # dataset
-    limit = 100
+    limit = args.limit
     id2triplet = load_data(_limit=limit)
 
     os.makedirs("./data", exist_ok=True)
@@ -237,8 +257,16 @@ def main():
     # accelerate
     # model = accelerate_model(model)
 
+    start_t = time.time()
+
+    report_to = None
+    if args.wandb:
+        report_to = "wandb"
+
     # train
-    train(model, tokenizer, train_dataset, val_dataset)
+    train(model, tokenizer, train_dataset, val_dataset, report_to=report_to)
+
+    count_t(start_t, "Train")
 
 
 if __name__ == '__main__':

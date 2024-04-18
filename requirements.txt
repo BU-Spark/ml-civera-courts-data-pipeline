@@ -9,6 +9,7 @@ peft
 scikit-learn
 bitsandbytes
 faiss-cpu
+wandb
 
 # install with
 # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121

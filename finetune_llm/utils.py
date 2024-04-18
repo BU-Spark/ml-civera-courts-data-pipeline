@@ -78,6 +78,7 @@ def count_t(start_t, desc="..."):
     dt = time.time() - start_t
     print_t = convert_seconds_to_hms(dt)
     print(f"{desc} takes {print_t}.")
+    return print_t
 
 
 def run_and_count_t(f, *args, desc="..."):
