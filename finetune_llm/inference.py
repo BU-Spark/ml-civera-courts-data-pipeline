@@ -148,15 +148,17 @@ def parse_answer(answer):
 
 
 def main():
-    limit = 100
-    test_id2triplets = get_data(limit=limit)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--id", type=int, default=2, help="finetuned model id")
+    parser.add_argument("--id", type=int, default=3, help="finetuned model id")
+    parser.add_argument("--limit", type=int, default=1000, help="finetuned model id")
     args = parser.parse_args()
     model_id = args.id
+
+    limit = args.limit
+    test_id2triplets = get_data(limit=limit)
 
     ft_model, tokenizer = load_model_tokenizer(model_id)
     ft_model.to(device)
