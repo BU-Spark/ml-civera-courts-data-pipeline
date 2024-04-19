@@ -10,11 +10,14 @@ import argparse
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset, default_collate
 
 from finetune import CiveraDataset
 from utils import *
 from load_data import load_data
+
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 def get_data(limit=100):
@@ -52,7 +55,8 @@ def load_model_tokenizer(model_id):
     # quit()
     model_tokenizer_name_or_path = "mistralai/Mistral-7B-Instruct-v0.2"
 
-    tokenizer = AutoTokenizer.from_pretrained(model_tokenizer_name_or_path, truncation=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_tokenizer_name_or_path)
+    tokenizer.pad_token = tokenizer.eos_token
 
     base_model = AutoModelForCausalLM.from_pretrained(model_tokenizer_name_or_path)
     ft_model = PeftModel.from_pretrained(base_model, lora_model_path)
@@ -69,53 +73,98 @@ def load_model_tokenizer(model_id):
     return ft_model, tokenizer
 
 
-def infer(ft_model, tokenizer, test_id2triplets, device, predictions, dump_path, if_print=False):
+def _collate_fn(batch):
+
+    batch_ids = [item['_id'] for item in batch]
+    batch_prompts = [item['prompt'] for item in batch]
+
+    return {
+        '_id': batch_ids,
+        'prompt': batch_prompts,
+    }
+
+
+class InferenceDataset(Dataset):
+    def __init__(self, tokenizer, id2triplets):
+        self.tokenizer = tokenizer
+
+        self.ids = list(id2triplets.keys())
+        self.triplets = list(id2triplets.values())
+
+        self.message_content_template = (
+                 "Use precise words to summarize the 'actor' and 'action' of the description: "
+                 f"{{'actor': '', 'action': '', 'description': _DESCRIPTION_}}\n"
+                 f"'actor' is an abstract entity in the legal case.\n"
+                 f"'action' is a summary of the behavior in legal events, which is the actor's action.\n"
+                 f"If 'actor' or 'action' is not empty, directly use it as the output."
+                 "Your output should be a json dict with two keys: 'actor' and 'action'."
+        )
+
+    def __len__(self):
+        return len(self.ids)
+
+    def __getitem__(self, idx):
+        message = [{
+            "role": "user",
+            "content": self.message_content_template.replace(
+                "_DESCRIPTION_", self.triplets[idx]["description"])
+        }]
+        # encodes = self.tokenizer.apply_chat_template(message, return_tensors="pt", padding=True, max_length=512)
+
+        prompt = self.tokenizer.apply_chat_template(message, tokenize=False)
+
+        # encodes = self.tokenizer.apply_chat_template(message, return_tensors="pt")
+        # print(self.tokenizer.apply_chat_template)
+        # print(idx, encodes.shape)
+        return dict(
+            _id=self.ids[idx],
+            prompt=prompt,
+        )
+
+
+def infer(ft_model, tokenizer, test_id2triplets, predictions, dump_path, if_print=False):
 
     print("all", len(test_id2triplets))
     test_id2triplets = {k: v for k, v in tqdm(test_id2triplets.items()) if k not in predictions}
     print("needed", len(test_id2triplets))
 
+    dataset = InferenceDataset(tokenizer, test_id2triplets)
+    dataloader = DataLoader(dataset, batch_size=16, shuffle=False, num_workers=16, collate_fn=_collate_fn)
+
     with torch.no_grad():
-        for i, (_id, triplet) in enumerate(test_id2triplets.items()):
+        for i, batch in enumerate((tq := tqdm(dataloader))):
 
-            messages = [
-                {"role": "user",
-                 "content":
-                     "Use precise words to summarize the 'actor' and 'action' of the description: "
-                     f"{{'actor': '', 'action': '', 'description':{triplet['description']}}}\n"
-                     f"'actor' is an abstract entity in the legal case.\n"
-                     f"'action' is a summary of the behavior in legal events, which is the actor's action.\n"
-                     f"If 'actor' or 'action' is not empty, directly use it as the output."
-                     "Your output should be a json dict with two keys: 'actor' and 'action'."},
-            ]
-            encodeds = tokenizer.apply_chat_template(messages, return_tensors="pt")
+            ids = batch["_id"]
 
-            model_inputs = encodeds.to(device)
+            # print(model_inputs.shape)
 
-            generated_ids = ft_model.generate(model_inputs, max_new_tokens=256, do_sample=True)
+            prompts = batch["prompt"]
+
+            inputs = tokenizer(prompts, padding="max_length", max_length=512, return_tensors="pt")
+            inputs = {k: v.to(device) for k, v in inputs.items()}
+
+            generated_ids = ft_model.generate(**inputs, max_new_tokens=256, do_sample=True,
+                                              pad_token_id=tokenizer.eos_token_id)
+
             decoded = tokenizer.batch_decode(generated_ids)
 
-            answer = decoded[0]
+            for _id, answer in zip(ids, decoded):
 
-            answer = parse_answer(answer)
+                # print("ori:", answer)
+                answer = parse_answer(answer)
+                # print(answer)
 
-            predictions[_id] = {
-                "triplet": triplet,
-                "answer": answer,
-            }
+                predictions[_id] = {
+                    "triplet": test_id2triplets[_id],
+                    "answer": answer,
+                }
 
-            if if_print:
-                print()
-                print(answer)
-                print()
-                print(triplet)
-                print()
-
-            print(f"{i}/{len(test_id2triplets)}")
+            # print(f"{i}/{len(dataloader)}")
+            tq.set_description(f"{i} / {len(dataloader)}")
             # if i >= 10:
             #     break
 
-            if i % 100 == 0:
+            if i % 10 == 0:
                 dump_json(predictions, dump_path, indent=4)
 
     return predictions
@@ -149,8 +198,6 @@ def parse_answer(answer):
 
 def main():
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
     parser = argparse.ArgumentParser()
     parser.add_argument("--id", type=int, default=3, help="finetuned model id")
     parser.add_argument("--limit", type=int, default=1000, help="finetuned model id")
@@ -175,7 +222,8 @@ def main():
     else:
         results = {}
 
-    results = infer(ft_model, tokenizer, test_id2triplets, device, results, res_path, if_print=False)
+    results = infer(ft_model, tokenizer, test_id2triplets, results, res_path, if_print=False)
+    # quit()
 
     dump_json(results, res_path, indent=4)
 

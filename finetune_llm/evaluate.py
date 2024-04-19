@@ -9,9 +9,11 @@ from utils import load_json, dump_json
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--id", type=int, default=2, help="finetuned model id")
-    parser.add_argument("--limit", type=int, default=100, help="limit on data")
+    parser.add_argument("--id", type=int, default=3, help="finetuned model id")
+    parser.add_argument("--limit", type=int, default=1000, help="limit on data")
     args = parser.parse_args()
+    print(args)
+
     model_id = args.id
 
     base_path = "results/"

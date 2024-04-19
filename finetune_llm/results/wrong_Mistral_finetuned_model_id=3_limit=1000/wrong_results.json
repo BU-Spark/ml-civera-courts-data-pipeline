@@ -1,0 +1,1454 @@
+{
+    "95653101": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Counterclaim filed",
+            "description": "Filipp Nesterov's Counterclaim"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Counterclaim filed"
+        }
+    },
+    "73441660": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Matthew Metcalf to Motion to motion for continuence and to reschedule that was filed on 06/07/2013."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Opposition to motion"
+        }
+    },
+    "10261192": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Decree and Order of Formal Pro",
+            "description": "Decree and Order of Formal Probate dated 06-02-2014\nApplies To: Atamian, Jeanmarie T (Personal Representative)"
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Order for Probate"
+        }
+    },
+    "50745274": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Motion to compel discovery",
+            "description": "Motion  to compel discovery filed by .  defendants"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Motion to compel discovery"
+        }
+    },
+    "95027996": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion for injunctive relief",
+            "description": "Motion by for Injunctive Relief"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion for injunctive relief"
+        }
+    },
+    "37665264": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Decree and Order of Formal Pro",
+            "description": "Decree and Order of Formal Probate dated 1/28/16 Laurie J. Devitt, Magistrate"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Decree and Order of Formal Pro"
+        }
+    },
+    "8487097": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed",
+            "description": "Notice of dismissal filed by First Spine & Rehab.\n\n"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal"
+        }
+    },
+    "2787940": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Appearance filed",
+            "description": "Appearance for American Express Centurion Bank filed by Attorney JAMES O. BALLENTINE 80 Minuteman Road Andover MA 01810 BBO# 662388"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Appearance filed"
+        }
+    },
+    "43058719": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Decree and Order of Formal Pro",
+            "description": "Decree and Order of Formal Probate"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Decree and Order of Formal Pro"
+        }
+    },
+    "3303818": {
+        "triplet": {
+            "actor": "Petitioner",
+            "action": "Statement of Voluntary Adminis",
+            "description": "Statement of Voluntary Administration"
+        },
+        "answer": {
+            "actor": "Proposed Fiduciary",
+            "action": "Statement of Voluntary Adminis"
+        }
+    },
+    "14509043": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Event scheduled",
+            "description": "PAYMENT REVIEW SCHEDULED FOR 07/07/2010 01:00 PM."
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Payment review"
+        }
+    },
+    "153578": {
+        "triplet": {
+            "actor": "Petitioner",
+            "action": "Petition for Appointment of Tr",
+            "description": "Petition for Appointment of Trustee"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Appointment of Tr"
+        }
+    },
+    "15408403": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "UCC filed",
+            "description": "ADR Uniform Counsel Certifcation filed by plainfiff's attorney."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "UCC filed"
+        }
+    },
+    "58618425": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion for new capias",
+            "description": "Motion for new capias  filed by ."
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Motion for new capias"
+        }
+    },
+    "14379079": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Decree and Order of Formal Pro",
+            "description": "Decree and Order of Formal Probate"
+        },
+        "answer": {
+            "actor": "Proposed Fiduciary",
+            "action": "Decree and Order of Formal Pro"
+        }
+    },
+    "95748882": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Answer and counterclaim filed",
+            "description": "Answer and Counterclaim of Amos Boswell filed."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Answer and counterclaim filed"
+        }
+    },
+    "80833734": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Memorandum filed",
+            "description": "Memorandum filed by Granite Family Chiropractic & Nutrition, P.c.."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Memorandum filed"
+        }
+    },
+    "15162493": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Certificate of Death filed",
+            "description": "Certificate of Death"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Certificate of Death filed"
+        }
+    },
+    "1520933": {
+        "triplet": {
+            "actor": "Petitioner",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete"
+        }
+    },
+    "76412190": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Answer to counterclaim filed",
+            "description": "Answer to counterclaim of Steven Fisher filed by Susan Thurston."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Counterclaim filed"
+        }
+    },
+    "53309336": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to Substitute a Party",
+            "description": "Motion  to substitute party filed by Dorothy Barnes."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to Substitute a Party"
+        }
+    },
+    "92682653": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal",
+            "description": "Notice of dismissal filed by Cataldo Ambulance Service, Inc. (Re: Jared Small) (Mass.R.Civ.P. 41(a)(1) & 58(a))."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed"
+        }
+    },
+    "1017293": {
+        "triplet": {
+            "actor": "Trustee",
+            "action": "Petition for Appointment of Tr",
+            "description": "Petition for Appointment of Trustee"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Petition for Appointment of Tr"
+        }
+    },
+    "139532": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed",
+            "description": "Notice of dismissal filed by Portfolio Recovery Associates ,LLC As Assignee of World Financial Network Bank / Pottery."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal"
+        }
+    },
+    "3822711": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Probate of Will a",
+            "description": "Petition for Probate of Will and Appointment of Executor"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Probate of Will a"
+        }
+    },
+    "36642272": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Certificate of Death filed",
+            "description": "Certificate of Death"
+        },
+        "answer": {
+            "actor": "Proposed Fiduciary",
+            "action": "Certificate of Death filed"
+        }
+    },
+    "98624934": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Counsel added",
+            "description": "Attorney appearance On this date Paige Schroeder, Esq. added as Private Counsel for Defendant Homeland Builders, Inc."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Counsel added"
+        }
+    },
+    "4156771": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Judgment vacated",
+            "description": "Judgment entered on 09/16/2013 vacated; Defendant filed Appeal.; parties notifed."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Judgment vacated"
+        }
+    },
+    "72724910": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Counterclaim filed",
+            "description": "ANSWER by Kenneth A. Encarnacao to defendant's Counterclaim"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Answer filed"
+        }
+    },
+    "65146938": {
+        "triplet": {
+            "actor": "Trustee",
+            "action": "Affidavit in support of motion",
+            "description": "Affidavit of  Dean A. Heinold, Esq. in support of Motion to attach wages by Trustee Process. filed."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Affidavit in support of motion"
+        }
+    },
+    "80169311": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Pre-Trial Memorandum",
+            "description": "Motion for leave to file amended pre-trial memorandum filed by Mirline Jean-Louis-Defendant."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Pre-Trial Memorandum"
+        }
+    },
+    "811069": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to assess damages",
+            "description": "Motion to assess damages (Mass.R.Civ.P. 55[b][4])  filed by Nicole D Smith.\n"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to assess damages"
+        }
+    },
+    "1536815": {
+        "triplet": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Administration"
+        }
+    },
+    "1070657": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed",
+            "description": "Notice of dismissal filed by LVNV Funding Llc As Assignee of Citibank (Mass.R.Civ.P. 41(a)(1) & 58(a)).\n\n"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal"
+        }
+    },
+    "381331": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Statement of damages filed",
+            "description": "AMENDED Statement of damages filed by Plaintiff"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Statement of damages filed"
+        }
+    },
+    "2544363": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Formal Probate",
+            "description": "Petition for Formal Probate"
+        },
+        "answer": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Formal Probate"
+        }
+    },
+    "89371520": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal",
+            "description": "Notice of dismissal filed by LVNV Funding LLC."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed"
+        }
+    },
+    "792229": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "answer": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Administration"
+        }
+    },
+    "1013308": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Answer to counterclaim filed",
+            "description": "Answer to counterclaim of Dorothea Endicott filed by TechFusion Corporation.\n"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Answer to counterclaim filed"
+        }
+    },
+    "106171358": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion for injunctive relief",
+            "description": "Motion by for Injunctive Relief"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion for injunctive relief"
+        }
+    },
+    "2632443": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Judgment vacated",
+            "description": "Judgment entered on 12/24/2013 vacated; defendant appealed case; parties notifed."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Judgment vacated"
+        }
+    },
+    "6032498": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Motion denied",
+            "description": "On 2/23/12, Plaintiff's Oral Motion for Costs -- denied."
+        },
+        "answer": {
+            "actor": "Judge",
+            "action": "Motion denied"
+        }
+    },
+    "3035061": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Termination notice filed",
+            "description": "Termination notice filed (Uniform Summary Process Rule 2)."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Termination notice filed"
+        }
+    },
+    "4205612": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "answer": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Administration"
+        }
+    },
+    "10724701": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Certificate of Death filed",
+            "description": "Certificate of Death"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Certificate of Death filed"
+        }
+    },
+    "84106937": {
+        "triplet": {
+            "actor": "Prosecutor",
+            "action": "Affidavit in support of motion",
+            "description": "Affidavit of Counsel in Support of Motion to Continue"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Affidavit in support of motion"
+        }
+    },
+    "6115871": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete"
+        }
+    },
+    "86589849": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion for continuance",
+            "description": "Motion for continuance (Uniform Small Claims Rule 7[a]) filed by Marisa Rizzi-Defendant."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion for continuance"
+        }
+    },
+    "103822316": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Agreement for Judgment",
+            "description": "Event Resulted:  Motion Hearing scheduled on: \n        05/30/2019 09:00 AM\nHas been: Not held but resolved\nComments: Amendment to Agreement for Judgment reviewd & approved.\nHon. Joseph Michaud, Presiding"
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Event resulted"
+        }
+    },
+    "4077329": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Order of Complete"
+        }
+    },
+    "81806790": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Answer to counterclaim filed",
+            "description": "Answer to counterclaim of Nicholas Chartier filed by Midway Manor."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Answer to counterclaim filed"
+        }
+    },
+    "29111637": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Summons",
+            "description": "Return of service on summons to trustee Atrius Health, Inc., Trustee: Officer service SERVED to party's agent."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Return of Service"
+        }
+    },
+    "4740535": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Default Removed",
+            "description": "Default removed against Jennifer Odoardi (Mass.R.Civ.P. 55(a)).\n\n\nDEFENDANT WAS LATE AND IN COURTROOM 1...JUDGE BARNES REMOVED DEFAULT AND RESCHEDULED CASE FOR 8/30/12 AT 9:00 AM"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Hearing"
+        }
+    },
+    "58932720": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to serve trustee summon",
+            "description": "Motion  To serve copy of trustee summonsby certified mail after intial service by deputy sheriff filed by Midland Funding LLC."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to serve trustee summon"
+        }
+    },
+    "6535857": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete"
+        }
+    },
+    "85282225": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal",
+            "description": "Notice of dismissal filed by Cape Cod Hospital (Mass.R.Civ.P. 41(a)(1) & 58(a))."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed"
+        }
+    },
+    "1313097": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Statement of Voluntary Adminis",
+            "description": "Statement of Voluntary Administration"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Statement of Voluntary Adminis"
+        }
+    },
+    "54096243": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion for new capias",
+            "description": "Motion for new capias  filed by Kaitlyn Bayrouty."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion for new capias"
+        }
+    },
+    "2475372": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Petition for Probate of Will a",
+            "description": "Petition for Probate of Will and Appointment of Executor"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Probate of Will a"
+        }
+    },
+    "57634053": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Citibank, N.A to Motion for admission pro hac vice that was filed on 04/19/1922."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Opposition to motion"
+        }
+    },
+    "95828": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Petition for Removal of Person",
+            "description": "Petition for Removal of Personal Representative"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Removal of Person"
+        }
+    },
+    "51403835": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Waiver of Award of Pre-Judgmen",
+            "description": "Waiver of Award of Pre-Judgment Interest filed by Plaintiff."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Waiver of Award of Pre-Judgmen"
+        }
+    },
+    "3468717": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "answer": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Administration"
+        }
+    },
+    "16721818": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed",
+            "description": "Notice of dismissal filed by Mark T Floyd (Mass.R.Civ.P. 41(a)(1) & 58(a)).\n\nNotice of Voluntary Dismissal without prejudice"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal"
+        }
+    },
+    "7629391": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Petition for Probate of Foreig",
+            "description": "Petition for Probate of Foreign Will"
+        },
+        "answer": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Probate of Foreig"
+        }
+    },
+    "16523796": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Judgment debtor unable to pay",
+            "description": "Judgment debtor Michael Wagenbach found, after examination under oath, to be currently unable to pay on judgment (G.L. c.224 15-16).\n\nApplies To: Wagenbach, Michael (Defendant); Kreppel, Esq., Gary Howard (Attorney) on behalf of Capital One Bank (USA) (Plaintiff)"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Judgment debtor unable to pay"
+        }
+    },
+    "94602577": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Affidavit filed",
+            "description": "Affidavit of Indigency FILED"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Affidavit of indigency"
+        }
+    },
+    "18455261": {
+        "triplet": {
+            "actor": "Court",
+            "action": "No capias returned",
+            "description": "NO CAPIAS RETURNED. CONT. DEFT. INCARCERATED."
+        },
+        "answer": {
+            "actor": "Notes",
+            "action": "No capias returned"
+        }
+    },
+    "5943680": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Probate of Will a",
+            "description": "Petition for Probate of Will and Appointment of Executor"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Probate of Will a"
+        }
+    },
+    "5479170": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Waiver of Award of Pre-Judgmen",
+            "description": "Waiver of award of Pre-Judgment interest filed by Plaintiff's Attorney."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Waiver of Award of Pre-Judgmen"
+        }
+    },
+    "2899546": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Statement of Voluntary Adminis",
+            "description": "Statement of Voluntary Administration"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Statement of Voluntary Adminis"
+        }
+    },
+    "1205123": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Motion for continuance",
+            "description": "Motion for continuance (Uniform Small Claims Rule 7[a])  filed by Janice E Miller."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Motion for continuance"
+        }
+    },
+    "31804295": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Appearance filed",
+            "description": "Appearance as substitute counsel for plaintiff for this date only filed by WAYNE MORRISON 355460, Esq. (Uniform Small Claims Rule 7(e))."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Appearance filed"
+        }
+    },
+    "2903486": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Original note filed",
+            "description": "Original note or other paper filed (Dist./Mun.Cts.Supp.R.Civ.P. 110) pltf atty req copy of deft answer w/$1 ck filed"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Original note filed"
+        }
+    },
+    "9694427": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Capias returned",
+            "description": "Capias returned."
+        },
+        "answer": {
+            "actor": "Notes",
+            "action": "Capias returned"
+        }
+    },
+    "74124652": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Corporate disclosure statement",
+            "description": "Corporate disclosure statement filed by Corporate Party (S.J.C. Rule 1:21)."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Corporate disclosure statement"
+        }
+    },
+    "105472688": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of indigency",
+            "description": "Affidavit of Indigency filed by Jennifer Williams"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Affidavit of indigency"
+        }
+    },
+    "2983648": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Judgment vacated",
+            "description": "Judgment entered on 06/30/2014 vacated; (Amended Agreement Filed); parties notifed."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Judgment vacated"
+        }
+    },
+    "15003737": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to Substitute a Party",
+            "description": "Motion  1.  to amend the defendant's name from H&R Graphics to H&R graphics & Patrick Martin  2.  to substitute a party from Christian Erban to Andrew Metcalf assignee of Christian Erban   3.  to issue an execution after one year under the new (substituted) party. filed by Christian Erban."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to Substitute a Party"
+        }
+    },
+    "105160196": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of indigency",
+            "description": "Affidavit of Indigency filed by Aiesha Lewis"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Affidavit of indigency"
+        }
+    },
+    "5201112": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Request to not dismiss",
+            "description": "Plaintiff reports that case is active and requests that it not be dismissed for failure to act on default (Joint Standing Order 1-04(V)(B))."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Request for default judgment"
+        }
+    },
+    "99525191": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Event resulted",
+            "description": "Event Resulted:  Housing Specialist Status Conference scheduled on:          09/07/2022 09:00 AM Has been: Held Comments: Case not settled. Schedule tier 2 Unassigned, Presiding"
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Case Management Conference"
+        }
+    },
+    "9519795": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Nathan Harrington to Motion to defendants' short notice of motion that was filed on 08/13/2012.\n"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Opposition to motion"
+        }
+    },
+    "6025378": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Petition for Order of Complete"
+        }
+    },
+    "82759636": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to transfer",
+            "description": "Motion to transfer to court with proper venue filed by Gjon Gjegji D/B/A GJ & GJ Whole House Remodeling & Restoration, Karine E Nabbout A/K/A Karine Nabbout and assented to by other party(ies)."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to transfer"
+        }
+    },
+    "6642719": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Original note filed",
+            "description": "Original note or other paper filed (Dist./Mun.Cts.Supp.R.Civ.P. 110)\nPltf Witness list filed"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Original note filed"
+        }
+    },
+    "98880505": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to dismiss counterclaim",
+            "description": "Motion to Dismiss Counterclaims and Related Defenses and/or to Dismiss Parallel Civil Action with Prejudice Pursuant to Mass Rule of Civil Procedure 12(b)(9) and Court Order filed by Water's Edge Limited Partnership"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to dismiss counterclaim"
+        }
+    },
+    "29414454": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Corporate disclosure statement",
+            "description": "Corporate disclosure statement filed by Corporate Party (S.J.C. Rule 1:21)."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Corporate disclosure statement"
+        }
+    },
+    "6692720": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Sale of Real Esta"
+        }
+    },
+    "5754519": {
+        "triplet": {
+            "actor": "Petitioner",
+            "action": "Petition for Removal of Person",
+            "description": "Petition for Removal of Personal Representative"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Removal of Person"
+        }
+    },
+    "25052135": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Original note filed",
+            "description": "Original note or other paper filed (Dist./Mun.Cts.Supp.R.Civ.P. 110) by Deft confirming receipt of Plaintiff's Response to Requesti"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Original note filed"
+        }
+    },
+    "5519269": {
+        "triplet": {
+            "actor": "Trustee",
+            "action": "Petition for Allowance of Acco",
+            "description": "Petition for Allowance of Account"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Allowance of Acco"
+        }
+    },
+    "1906586": {
+        "triplet": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Sale of Real Esta"
+        }
+    },
+    "81785689": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Matthew Holland to Motion To Dismiss Plaintiff's First Amended Complaint that was filed on 11/08/2021."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Opposition to motion"
+        }
+    },
+    "105938326": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of military service",
+            "description": "Affidavit Of Military Service"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Affidavit of military service"
+        }
+    },
+    "105685881": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of indigency",
+            "description": "Affidavit of Indigency filed by David Dube"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Affidavit of indigency"
+        }
+    },
+    "3639716": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "answer": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Administration"
+        }
+    },
+    "68059086": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Motion for continuance",
+            "description": "Motion for continuance (Uniform Small Claims Rule 7[a]) Motion has been ascented to. filed by Craig D Mackay."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Motion for continuance"
+        }
+    },
+    "99438069": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of indigency",
+            "description": "Affidavit of Indigency filed by Wilson Rodriguez"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Affidavit of indigency"
+        }
+    },
+    "375163": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Appointment of agent filed",
+            "description": "Appointment of Agent"
+        },
+        "answer": {
+            "actor": "Trustee",
+            "action": "Appointment of agent filed"
+        }
+    },
+    "8936263": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Return of Service",
+            "description": "Return of Service on Notice of Informal Probate\n\nAttorney: Massimiano, Esq., Anthony G"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Return of Service"
+        }
+    },
+    "61426110": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Memorandum filed",
+            "description": "Memorandum filed by Massachusetts Electric Company D/B/A National Grid. of damages"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Memorandum filed"
+        }
+    },
+    "106176688": {
+        "triplet": {
+            "actor": "Child",
+            "action": "Affidavit of indigency",
+            "description": "Affidavit of Indigency Filed"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of indigency"
+        }
+    },
+    "9876831": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion for successive service ",
+            "description": "Motion for successive service of trustee summons filed by LVNV Funding LLC As Assignee of O S I Funding Corp.,  As Assignee of Discover / Greenwood Trust Company."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion for successive service "
+        }
+    },
+    "99454194": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Erika Maggio, Paul Maggio to Motion deft's motion to dismiss/transfer for improper venue that was filed on 11/15/2019."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Opposition to motion"
+        }
+    },
+    "1116622": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "answer": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Sale of Real Esta"
+        }
+    },
+    "2552175": {
+        "triplet": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Special Administr",
+            "description": "Petition for Special Administration"
+        },
+        "answer": {
+            "actor": "Petitioner",
+            "action": "Petition for Special Administr"
+        }
+    },
+    "59762001": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to vacate judgment",
+            "description": "Motion to vacate judgment (Uniform Small Claims Rule 8)  filed by Portfolio Recovery Associates, LLC."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to vacate judgment"
+        }
+    },
+    "8644870": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion withdrawn",
+            "description": "Motion for attachment by trustee process (Civ.P.4.2[g]) waived or withdrawn by moving party.\n"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion withdrawn"
+        }
+    },
+    "93437645": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Memorandum filed",
+            "description": "Memorandum filed by Small Claims party."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Memorandum filed"
+        }
+    },
+    "62389430": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Dismissal",
+            "description": "Judgment of dismissal of claim of P01 MICHAEL WEEKS against D01 REZA ALAVIAN after plaintiff(s) failed to appear ( Ghiloni, AC-M Christopher ); parties notified."
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Dismissal"
+        }
+    },
+    "6873366": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Capias returned",
+            "description": "Capias returned"
+        },
+        "answer": {
+            "actor": "Notes",
+            "action": "Capias returned"
+        }
+    },
+    "805180": {
+        "triplet": {
+            "actor": "Executor/trix",
+            "action": "Certificate of Death filed",
+            "description": "Certificate of Death"
+        },
+        "answer": {
+            "actor": "Administrator/trix",
+            "action": "Certificate of Death filed"
+        }
+    },
+    "67256910": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Motion to compel discovery",
+            "description": "Motion to compel production of documents by the defendant Jennifer Romeus is filed by the plaintiff"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Motion to compel discovery"
+        }
+    },
+    "2163267": {
+        "triplet": {
+            "actor": "Petitioner",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "answer": {
+            "actor": "Personal Representative",
+            "action": "Petition for Sale of Real Esta"
+        }
+    },
+    "2704957": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Revere Housing Authority to Motion to compel discovery that was filed on 04/09/2012.\n"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Motion to compel discovery"
+        }
+    },
+    "102708216": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Hearing",
+            "description": "ORDER (10/26/21)\n\nJudge: Dalton, Hon. Fairlie A"
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Order NISI"
+        }
+    },
+    "2816294": {
+        "triplet": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Sale of Real Esta"
+        }
+    },
+    "63303863": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to amend judgment",
+            "description": "Motion To Amend Judgment And Execution filed by Breda O'Connor"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to amend judgment"
+        }
+    },
+    "4967578": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Execution unsatisfied",
+            "description": "Execution Writ returned unsatisfied.\nTrustee Execution"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Execution unsatisfied"
+        }
+    },
+    "1205565": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Misc Notes",
+            "description": "Blank Summons MGL 262 section 4b Receipt: 43608 Date: 10/16/2013"
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Misc Notes"
+        }
+    },
+    "89394480": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Opposition to motion",
+            "description": "Opposition filed by Jessica Collari to Motion To Dismiss that was filed on 11/12/2020."
+        },
+        "answer": {
+            "actor": "Trustee",
+            "action": "Opposition to motion"
+        }
+    },
+    "21715678": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Default Removed",
+            "description": "Default removed against WILLIAM C HALL & WILLIAM HALL SR (Mass.R.Civ.P. 55(a)) ( McKenna, Jr., Hon. Robert J. )."
+        },
+        "answer": {
+            "actor": "Court",
+            "action": "Hearing"
+        }
+    },
+    "8513005": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete"
+        }
+    },
+    "94951983": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Motion to extend time",
+            "description": "Motion to extend time filed by Bassam Awad"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Motion to extend time"
+        }
+    },
+    "87809087": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Motion to assess attorney fees",
+            "description": "Motion to assess attorney fees  filed by Laurie Anastos, Joseph Anastos."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Motion to assess attorney fees"
+        }
+    },
+    "6137924": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Formal Probate",
+            "description": "Petition for Formal Probate"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Formal Probate"
+        }
+    },
+    "5028244": {
+        "triplet": {
+            "actor": "Plaintiff",
+            "action": "Answer to counterclaim filed",
+            "description": "Answer to counterclaim of Patricia Notrem, Daryl Notrem filed by John McCarren."
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Counterclaim filed"
+        }
+    },
+    "6282919": {
+        "triplet": {
+            "actor": "Court",
+            "action": "Capias returned",
+            "description": "Capias returned"
+        },
+        "answer": {
+            "actor": "Notes",
+            "action": "Capias returned"
+        }
+    },
+    "1982276": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Affidavit filed",
+            "description": "Affidavit of Wilton B Cabrera Dean Heinold filed."
+        },
+        "answer": {
+            "actor": "Plaintiff",
+            "action": "Affidavit filed"
+        }
+    },
+    "1799046": {
+        "triplet": {
+            "actor": "Personal Representative",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "answer": {
+            "actor": "Executor/trix",
+            "action": "Petition for Sale of Real Esta"
+        }
+    },
+    "69163339": {
+        "triplet": {
+            "actor": "Defendant",
+            "action": "Motion to strike answer",
+            "description": "Plaintiff Quincy Mutual Fire Insurance Company's Notice of intent to file motion to strike the purported answer and counterclaim of deft Duane St.Denis and/or motion to dismiss(rec'd12/3/08)"
+        },
+        "answer": {
+            "actor": "Defendant",
+            "action": "Notice of intent to offer"
+        }
+    }
+}
