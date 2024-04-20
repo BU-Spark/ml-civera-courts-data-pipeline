@@ -119,16 +119,21 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset, repo
             continue
         output_dir = output_dir + f"/{_i}"
         break
+    print("\n\n")
     print(output_dir)
+    log_dir = f"{output_dir}/logs"
+    print(log_dir)
+    os.makedirs(log_dir)
+    print("\n\n")
 
     if report_to == "wandb":
         print("Report To Wandb")
         import wandb
         wandb.login()
 
-        wandb_project = f"civera-finetune-model_id={_i}"
-        if len(wandb_project) > 0:
-            os.environ["WANDB_PROJECT"] = wandb_project
+    wandb_project = f"civera-finetune-model_id={_i}"
+    if len(wandb_project) > 0:
+        os.environ["WANDB_PROJECT"] = wandb_project
 
     trainer = transformers.Trainer(
         model=model,
@@ -136,9 +141,9 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset, repo
         eval_dataset=tokenized_val_dataset,
         args=transformers.TrainingArguments(
             output_dir=output_dir,
-            warmup_steps=1,  # Number of steps to perform learning rate warmup
+            warmup_steps=100,  # Number of steps to perform learning rate warmup
             per_device_train_batch_size=2,  # Batch size per device during training
-            gradient_accumulation_steps=10,  # Number of steps to accumulate gradients before updating weights
+            gradient_accumulation_steps=20,  # Number of steps to accumulate gradients before updating weights
             gradient_checkpointing=True,  # Enable gradient checkpointing to save memory
             num_train_epochs=5,  # Set the number of training epochs
             learning_rate=2.5e-5,  # Set a small learning rate for fine-tuning
@@ -147,14 +152,16 @@ def train(model, tokenizer, tokenized_train_dataset, tokenized_val_dataset, repo
             # logging_strategy="epoch",  # Log metrics at the end of each epoch
             logging_strategy="steps",
             logging_steps=25,
-            logging_dir=f"{output_dir}/logs",  # Directory where logs will be stored
+            logging_dir=log_dir,  # Directory where logs will be stored
             save_strategy="epoch",  # Save model checkpoints at the end of each epoch
+            bf16_full_eval=True,
             evaluation_strategy="epoch",  # Evaluate the model at the end of each epoch
+            eval_accumulation_steps=20,
             eval_steps=None,  # No need to set eval_steps since the strategy is based on epochs
             do_eval=True,  # Perform evaluation at the end of each epoch
             report_to=report_to,  # "wandb"  # Uncomment to use Weights & Biases for monitoring, if desired
             run_name=f"{run_name}-{datetime.now().strftime('%Y-%m-%d-%H-%M')}",  # Name the training run
-            disable_tqdm=True,
+            # disable_tqdm=True,
         ),
         data_collator=transformers.DataCollatorForLanguageModeling(tokenizer, mlm=False),
     )
@@ -202,8 +209,8 @@ def print_trainable_parameters(model):
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", default=100, type=int)
-    parser.add_argument("--wandb", action="store_true")
+    parser.add_argument("--limit", default=1000, type=int)
+    parser.add_argument("--wandb", action="store_true")  # !!
     args = parser.parse_args()
     print(args)
     print("=" * 30)
@@ -243,6 +250,9 @@ def main():
     val_triplets = [id2triplet[_id] for _id in train_val_test["val"]]
     test_triplets = [id2triplet[_id] for _id in train_val_test["test"]]
 
+    # train_triplets = train_triplets[:100]
+    # val_triplets = val_triplets[:50]
+
     train_dataset = CiveraDataset(tokenizer, train_triplets)
     val_dataset = CiveraDataset(tokenizer, val_triplets)
     test_dataset = CiveraDataset(tokenizer, test_triplets)
@@ -255,7 +265,7 @@ def main():
     model = prepare_model(model)
 
     # accelerate
-    # model = accelerate_model(model)
+    model = accelerate_model(model)
 
     start_t = time.time()
 

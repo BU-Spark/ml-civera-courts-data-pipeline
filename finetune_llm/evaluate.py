@@ -30,27 +30,32 @@ def main():
     wrong_actor_count = defaultdict(int)
 
     for _id, res in (tq := tqdm(results.items())):
-        count += 1
-        correct = True
 
-        # actor
-        if res["triplet"]["actor"] == res["answer"]["actor"]:
-            actor_c += 1
-        else:
-            correct = False
-            wrong_actor_count[res["triplet"]["actor"]] += 1
+        try:
+            count += 1
+            correct = True
 
-        # action
-        if res["triplet"]["action"] == res["answer"]["action"]:
-            action_c += 1
-        else:
-            correct = False
-            wrong_action_count[res["triplet"]["action"]] += 1
+            # actor
+            if res["triplet"]["actor"] == res["answer"]["actor"]:
+                actor_c += 1
+            else:
+                correct = False
+                wrong_actor_count[res["triplet"]["actor"]] += 1
 
-        tq.set_description(f"count={count} | actor_c={actor_c} | action_c={action_c}")
+            # action
+            if res["triplet"]["action"] == res["answer"]["action"]:
+                action_c += 1
+            else:
+                correct = False
+                wrong_action_count[res["triplet"]["action"]] += 1
 
-        if not correct:
-            wrong_results[_id] = res
+            tq.set_description(f"count={count} | actor_c={actor_c} | action_c={action_c}")
+
+            if not correct:
+                wrong_results[_id] = res
+        except Exception as e:
+            print(e)
+            print(res)
 
     # Save wrong actions and actors to separate JSON files
     dump_json(wrong_results, os.path.join(wrong_dir, "wrong_results.json"), indent=4)
