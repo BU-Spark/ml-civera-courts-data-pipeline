@@ -120,7 +120,7 @@ def get_sampled_data(_limit=1000):
     return results
 
 
-limit = 100
+limit = 1000
 data = get_sampled_data(limit)
 
 with open(f"sample/sampled_data_based_on_action_type_limit={limit}.json", "w") as f:

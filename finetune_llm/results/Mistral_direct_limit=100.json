@@ -1,0 +1,834 @@
+{
+    "972599": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Acknowledgement of service",
+            "description": "Acknowledgement of Service: CBS Corporation f/k/a Viacom, Inc.,\nSuccessor To CBS Corp. f/k/a(Defendant)"
+        },
+        "res": [
+            "{'actor': 'CBS Corporation', 'action': 'Acknowledgement of service'}"
+        ]
+    },
+    "3888516": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Affidavit filed",
+            "description": "Affidavit of Worldwide Asset Purchasing II, LLC As Assignee of Bank of America Pursuant to Mass Rule 55(b) (2) filed."
+        },
+        "res": [
+            "{'actor': 'Worldwide Asset Purchasing II, LLC', 'action': 'Affidavit filed'}"
+        ]
+    },
+    "21273868": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Affidavit in support of motion",
+            "description": "Affidavit of VICTOR SHAPIRO in support of motion to FOR ATTACHMENT BY TRUSTEE SERVICE filed by P01  BENEFICIAL MASSACHUSETTS INC.."
+        },
+        "res": [
+            "{'actor': 'Beneficial Massachusetts Inc.', 'action': 'Motion to attach by trustee service'}"
+        ]
+    },
+    "105807770": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Affidavit of indigency",
+            "description": "Affidavit of Indigency filed by Yvonne Hart"
+        },
+        "res": [
+            "{'actor': 'Yvonne Hart', 'action': 'Affidavit of indigency filed'}"
+        ]
+    },
+    "224812": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Amended Answer filed",
+            "description": "Amended answer filed by Jose Nebron (Mass.R.Civ.P. 15)."
+        },
+        "res": [
+            "{'actor': 'Jose Nebron', 'action': 'Amended Answer filed'}"
+        ]
+    },
+    "99937523": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Answer and counterclaim filed",
+            "description": "Answer and Counterclaim of Heather Faulk filed."
+        },
+        "res": [
+            "{'actor': 'Heather Faulk', 'action': 'Counterclaim filed'}"
+        ]
+    },
+    "96205788": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Answer filed",
+            "description": "Answer filed by Cristhian Vazquez-Cruz. With Jury Trial Request"
+        },
+        "res": [
+            "{'actor': 'Defendant', 'action': 'Jury Trial Request'}"
+        ]
+    },
+    "95514017": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Answer to counterclaim filed",
+            "description": "Answer to counterclaim of Heather Perette filed by Dental Specialties Inc."
+        },
+        "res": [
+            "{'actor': 'Heather Perette', 'action': 'Answer to counterclaim filed'}"
+        ]
+    },
+    "5333528": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Application filed",
+            "description": "Application filed."
+        },
+        "res": [
+            "{'actor': 'Applicant', 'action': 'Application filed'}"
+        ]
+    },
+    "23866": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Attorney fees waived",
+            "description": "Attorney fees waived by plaintiff(s)."
+        },
+        "res": [
+            "{'actor': 'Plaintiff', 'action': 'waived', 'description': 'Attorney fees waived by plaintiff(s)'}"
+        ]
+    },
+    "1811226": {
+        "case": {
+            "actor": "Court",
+            "action": "Bankruptcy stay of proceedings",
+            "description": "Misc Entry:  Notice of Bankruptcy Case filing"
+        },
+        "res": [
+            "{'actor': 'Petitioner/ Debtor', 'action': 'Notice of Bankruptcy Case filing'}"
+        ]
+    },
+    "25405561": {
+        "case": {
+            "actor": "Court",
+            "action": "Capias expired",
+            "description": "Capias returned expired and unserved."
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Capias returned unserved'}"
+        ]
+    },
+    "94722735": {
+        "case": {
+            "actor": "Court",
+            "action": "Case disposed",
+            "description": "Case Disposed"
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Case disposed'}"
+        ]
+    },
+    "20630403": {
+        "case": {
+            "actor": "Court",
+            "action": "Case inactivated",
+            "description": "Case Inactivated: Judgment of dismissal has been entered."
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Case inactivated'}"
+        ]
+    },
+    "1506003": {
+        "case": {
+            "actor": "Proposed Fiduciary",
+            "action": "Certificate of Death filed",
+            "description": "Certificate of Death"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Certificate of Death filed'}"
+        ]
+    },
+    "50755924": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Change of address",
+            "description": "Change of address for D01  CHRISTOPHER A. GRANT from 576 WASHINGTON STREET, #407, WEYMOUTH, MA 02188 to 1968 NORTH MAIN STREET, FALL RIVER, MA 02720. Defendant provided address."
+        },
+        "res": [
+            "{'actor': 'Defendant', 'action': 'Change of address'}"
+        ]
+    },
+    "2131663": {
+        "case": {
+            "actor": "Court",
+            "action": "Continuance",
+            "description": "Stipulation of parties to continue case"
+        },
+        "res": [
+            "{'actor': 'All Parties', 'action': 'Stipulation of continuance'}"
+        ]
+    },
+    "89866440": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Corporate disclosure statement",
+            "description": "Corporate disclosure statement filed by Corporate Party (S.J.C. Rule 1:21)."
+        },
+        "res": [
+            "{'actor': 'Corporate Party', 'action': 'Corporate disclosure statement'}"
+        ]
+    },
+    "7063806": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Counterclaim filed",
+            "description": "Counterclaim filed by Kelly Howard against Ambassador Pool Distributors, Inc., (Mass.R.Civ.P. 13).\n"
+        },
+        "res": [
+            "{'actor': 'Kelly Howard', 'action': 'Counterclaim filed'}"
+        ]
+    },
+    "4830961": {
+        "case": {
+            "actor": "Court",
+            "action": "Debtor before the court",
+            "description": "Judgment debtor before the court on capias."
+        },
+        "res": [
+            "{'actor': 'Defendant', 'action': 'Capias'}"
+        ]
+    },
+    "19607073": {
+        "case": {
+            "actor": "Personal Representative",
+            "action": "Decree and Order of Formal Pro",
+            "description": "Decree and Order of Formal Probate"
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Decree and Order of Formal Probate'}"
+        ]
+    },
+    "15774518": {
+        "case": {
+            "actor": "Court",
+            "action": "Default Removed",
+            "description": "Default removed against D01  JOHN NJOROGE (Mass.R.Civ.P. 55(a)) ( Sullivan, Hon. James M. )."
+        },
+        "res": [
+            "{'actor': 'John Njorge', 'action': 'Default removed'}"
+        ]
+    },
+    "99976399": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Demand for Jury Trial",
+            "description": "Jury trial claim on all issues endorsed upon pleading by Linda L Pratt (G.L. c.231 u00a7103; Mass.R.Civ.P. 38(b))."
+        },
+        "res": [
+            "{'actor': 'Defendant', 'action': 'Demand for Jury Trial'}"
+        ]
+    },
+    "97491453": {
+        "case": {
+            "actor": "Court",
+            "action": "Dismissal",
+            "description": "R 41(a)(1) Voluntary Dismissal"
+        },
+        "res": [
+            "{'actor': 'Petitioner/Plaintiff', 'action': 'Voluntary Dismissal'}"
+        ]
+    },
+    "25942347": {
+        "case": {
+            "actor": "Court",
+            "action": "Execution satisfied",
+            "description": "Execution Writ returned satisfied in full."
+        },
+        "res": [
+            "{'actor': 'Executor/trix', 'action': 'Execution satisfied'}"
+        ]
+    },
+    "23642428": {
+        "case": {
+            "actor": "Court",
+            "action": "Fee due",
+            "description": "Civil Filing Fee Surcharge due. Receipt: 43215 Date: 04/21/2015"
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Fee due'}"
+        ]
+    },
+    "1856284": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Interest waived",
+            "description": "Prejudgment interest waived by plaintiff(s)."
+        },
+        "res": [
+            "{'actor': 'Plaintiff', 'action': 'Interest waived'}"
+        ]
+    },
+    "29954880": {
+        "case": {
+            "actor": "Court",
+            "action": "Judgment",
+            "description": "Judgment for P01 DISCOVER BANK to recover of D01 ELAINE V. ROHALY-MASON by agreement of the parties the sum of $13,196.44 plus prejudgment interest of $0.00 and costs of $241.34 for judgment total of $13,437.78 ( Locke, Hon. David B. ) parties notified."
+        },
+        "res": [
+            "{'actor': 'Parties', 'action': 'Agreement for Judgment'}"
+        ]
+    },
+    "2734112": {
+        "case": {
+            "actor": "Court",
+            "action": "Judgment vacated",
+            "description": "Judgment entered on 03/14/2014 vacated; per allowed motion to remove dismissal and restore to trial list; parties notifed."
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Judgment vacated'}"
+        ]
+    },
+    "9071629": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Memorandum filed",
+            "description": "Memorandum filed by Martignetti Grocery Co., Inc. D/B/A Classic Wine Imports, Commonwealth Wine & Spirits and United Liquors.\nOF DAMAGES"
+        },
+        "res": [
+            "{'actor': 'Classic Wine Imports, Inc.', 'action': 'Memorandum filed'}"
+        ]
+    },
+    "1824439": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion for continuance",
+            "description": "Motion for continuance (Uniform Small Claims Rule 7[a])  filed by D.R. Peck Excavating, Inc..\n\n"
+        },
+        "res": [
+            "{'actor': 'D.R. Peck Excavating, Inc.', 'action': 'Motion for continuance'}"
+        ]
+    },
+    "4374322": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion for default judgment",
+            "description": "Application to clerk-magistrate for default judgment against Brian Hanify who has been defaulted for failure to appear filed by Midland Funding LLC As Assignee of HSBC Bank Nevada, N.A. (Mass.R.Civ.P.55(b)(1) & 77(b))."
+        },
+        "res": [
+            "{'actor': 'Defendant', 'action': 'Application filed'}"
+        ]
+    },
+    "8673654": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion for exemption from time",
+            "description": "Motion  FOR EXEMPTION FROM TIME STANDARDS filed by Citibank, N.A.."
+        },
+        "res": [
+            "{'actor': 'Citibank, N.A.', 'action': 'Motion for exemption from time'}"
+        ]
+    },
+    "51824477": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion for final judgment for ",
+            "description": "Motion for final judgment for relief for failure to answer interrogatories filed by P01  FIA CARD SERVICES, N.A.."
+        },
+        "res": [
+            "{'actor': 'Plaintiff', 'action': 'Motion for final judgment'}"
+        ]
+    },
+    "104186574": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion for judgment",
+            "description": "Motion for Judgment filed by Revere Housing Authority\nFinal Judgment Pursuant to Rules of Civil P.33(A)(4)\nExhibits included"
+        },
+        "res": [
+            "{'actor': 'Revere Housing Authority', 'action': 'Motion for judgment'}"
+        ]
+    },
+    "54473734": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion for new capias",
+            "description": "Motion for new capias filed by P01  HARVARD FUNDING LLC."
+        },
+        "res": [
+            "{'actor': 'Harvard Funding LLC', 'action': 'Motion for new capias'}"
+        ]
+    },
+    "78537950": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Motion for successive service ",
+            "description": "Motion for successive service of trustee summons And Order of Approval of Wage Attachment filed by CACH, LLC."
+        },
+        "res": [
+            "{'actor': 'CACH, LLC', 'action': 'Motion for successive service'}",
+            {
+                "actor": "CACH, LLC",
+                "action": "Filed"
+            },
+            {
+                "actor": "Court",
+                "action": "Order of Approval filed"
+            }
+        ]
+    },
+    "5413387": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to amend judgment",
+            "description": "Motion to amend judgment and execution filed by P01  CACH, LLC."
+        },
+        "res": [
+            "{'actor': 'CACH, LLC', 'action': 'Motion to amend judgment'}"
+        ]
+    },
+    "100596640": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to appoint special proc",
+            "description": "Motion to appoint special process server (Civ.P. 3[c] &4) filed by James LeBlanc-Plaintiff."
+        },
+        "res": [
+            "{'actor': 'Plaintiff', 'action': 'Motion to appoint special process server'}"
+        ]
+    },
+    "93043759": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to assess damages",
+            "description": "Motion  for assessment of damages filed by Ford Motor Credit Company LLC."
+        },
+        "res": [
+            "{'actor': 'Ford Motor Credit Company LLC', 'action': 'Motion for assessment of damages'}"
+        ]
+    },
+    "95330487": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to dismiss appeal",
+            "description": "Motion to dismiss appeal filed by Miriam Galloway"
+        },
+        "res": [
+            "{'actor': 'Miriam Galloway', 'action': 'Motion to dismiss appeal}"
+        ]
+    },
+    "78572168": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to dismiss counterclaim",
+            "description": "Motion  to dismiss counterclaims filed by Capital One Bank (USA), N.A.,."
+        },
+        "res": [
+            "{'actor': 'Capital One Bank (USA), N.A.', 'action': 'Motion to dismiss'}"
+        ]
+    },
+    "99654162": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Motion to extend time",
+            "description": "Motion To Extend Time filed by Crystal Long"
+        },
+        "res": [
+            "{'actor': 'Crystal Long', 'action': 'Motion to extend time'}"
+        ]
+    },
+    "58881622": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Motion to inspect records",
+            "description": "Motion for inspection and copying of medical records - South Shore Hospital filed by D01  ANTWON TRINH."
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Motion to inspect records'}"
+        ]
+    },
+    "99266151": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to issue execution",
+            "description": "Motion to issue execution filed by Trinity Management Company, As Lessor, And Maple Street Apartments, Llc, As Owner"
+        },
+        "res": [
+            "{'actor': ['Trinity Management Company', 'As Lessor'], 'action': 'Motion to issue execution'}",
+            "{'actor': ['Trinity Management Company', 'As Lessor'], 'action': 'Issue execution'}"
+        ]
+    },
+    "102146966": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Motion to remove default",
+            "description": "Motion by Elizabeth L Arone to remove default"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Motion to remove default'}"
+        ]
+    },
+    "105715722": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to restore",
+            "description": "Motion to Restore filed by Crystal Steward"
+        },
+        "res": [
+            "{'actor': 'Crystal Steward', 'action': 'Motion to restore'}"
+        ]
+    },
+    "102514540": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to serve trustee summon",
+            "description": "Motion to Serve Copy of Trustee Summons by Certified Mail by Plaintiff's Attorney after Initial Service by Deputy Sheriff filed by Bank of America, N.A.-Plaintiff."
+        },
+        "res": [
+            "{'actor': 'Plaintiff's Attorney', 'action': 'Motion to serve trustee summon'}"
+        ]
+    },
+    "54303527": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to strike answer",
+            "description": "Motion to strike answer to counterclaim filed by P01  METROSTATE HOSPITALITY CORPORATION."
+        },
+        "res": [
+            "{'actor': 'Defendant/Plaintiff in Counter', 'action': 'Motion to strike answer'}"
+        ]
+    },
+    "90255174": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to transfer",
+            "description": "Motion to transfer  filed by Webster First Federal Credit Union"
+        },
+        "res": [
+            "{'actor': 'Credit Union', 'action': 'Motion to transfer'}"
+        ]
+    },
+    "855279": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Motion to vacate judgment",
+            "description": "Motion  to vacate judgment of dismissal for good cause filed by Dina's Antiques, Inc. D/B/A Fontaine's  Auction Gallery."
+        },
+        "res": [
+            "{'actor': 'Dina's Antiques, Inc.', 'action': 'Motion to vacate dismissal'}"
+        ]
+    },
+    "79088887": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal",
+            "description": "Notice of dismissal filed by PORTFOLIO RECOVERY ASSOCIATES LLC."
+        },
+        "res": [
+            "{'actor': 'Portfolio Recovery Associates LLC', 'action': 'Dismissal'}"
+        ]
+    },
+    "12624033": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Notice of dismissal filed",
+            "description": "Notice of dismissal filed by DBI Waste Systems, Inc."
+        },
+        "res": [
+            "{'actor': 'DBI Waste Systems, Inc.', 'action': 'Dismissal'}"
+        ]
+    },
+    "22959926": {
+        "case": {
+            "actor": "Court",
+            "action": "Notice of potential dismissal",
+            "description": "NOTICE OF POTENTIAL DISMISSAL UNDER MASS.R.CIV.P. 41(b)(1) potentially to be sent on 03/17/2009 05:00 PM."
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Notice of potential dismissal'}"
+        ]
+    },
+    "4969697": {
+        "case": {
+            "actor": "Court",
+            "action": "Notice sent",
+            "description": "Notice sent to parties.\nA Notce to the Parties was generated and sent to:\nPlaintiff:  Raymond Frenkel"
+        },
+        "res": [
+            "{'actor': 'Parties', 'action': 'Notice sent'}"
+        ]
+    },
+    "3079691": {
+        "case": {
+            "actor": "Court",
+            "action": "Order for Informal Probate",
+            "description": "Order for Informal Probate of Will and/or Appointment of Personal Representative dated 05/17/2012"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Order for Informal Probate'}"
+        ]
+    },
+    "11306209": {
+        "case": {
+            "actor": "Court",
+            "action": "Order Nisi",
+            "description": "Order: NISI; parties notified.\n\n#3"
+        },
+        "res": [
+            "{'actor': 'Court', 'action': 'Order Nisi'}"
+        ]
+    },
+    "25214079": {
+        "case": {
+            "actor": "Court",
+            "action": "Payment order",
+            "description": "Payment order to pay total amount by 07/06/2005 ( Fleming, AC-M John M. ) ."
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Payment order'}"
+        ]
+    },
+    "2396423": {
+        "case": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Administration",
+            "description": "Petition for Administration"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Petition for Administration'}"
+        ]
+    },
+    "4245916": {
+        "case": {
+            "actor": "Personal Representative",
+            "action": "Petition for Allowance of Acco",
+            "description": "Petition for Allowance of Account"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Allowance of Account'}"
+        ]
+    },
+    "6802662": {
+        "case": {
+            "actor": "Proposed Fiduciary",
+            "action": "Petition for Appointment of Tr",
+            "description": "Petition for Appointment of Trustee"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Appointment of Trustee'}"
+        ]
+    },
+    "2405052": {
+        "case": {
+            "actor": "Petitioner",
+            "action": "Petition for Informal Probate",
+            "description": "Petition for Informal Probate"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Order for Informal Probate'}"
+        ]
+    },
+    "6764844": {
+        "case": {
+            "actor": "Executor/trix",
+            "action": "Petition for Order of Complete",
+            "description": "Petition for Order of Complete Settlement"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Petition for Order of Complete Settlement'}"
+        ]
+    },
+    "1953483": {
+        "case": {
+            "actor": "Executor/trix",
+            "action": "Petition for Probate of Will a",
+            "description": "Petition for Probate of Will and Appointment of Executor"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Petition for Probate of Will and Appointment of Executor'}"
+        ]
+    },
+    "518023": {
+        "case": {
+            "actor": "Personal Representative",
+            "action": "Petition for Sale of Real Esta",
+            "description": "Petition for Sale of Real Estate"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Petition for Sale of Real Estate'}"
+        ]
+    },
+    "4758932": {
+        "case": {
+            "actor": "Administrator/trix",
+            "action": "Petition for Special Administr",
+            "description": "Petition for Special Administration"
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Petition for Special Administration'}"
+        ]
+    },
+    "95346821": {
+        "case": {
+            "actor": "Court",
+            "action": "Referred to Housing Specialist",
+            "description": "Referred to Housing Specialist"
+        },
+        "res": [
+            "{'actor': 'Receiver/Special Administratrix', 'action': 'Referred to Housing Specialist'}"
+        ]
+    },
+    "10461071": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Request for admissions filed",
+            "description": "Request for admissions filed by Midland Funding LLC As Assignee of FIA Card Services NA (Mass.R.Civ.P. 36)"
+        },
+        "res": [
+            "{'actor': 'Midland Funding LLC', 'action': 'Request for admissions filed'}"
+        ]
+    },
+    "54662575": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Request for continuance",
+            "description": "Plaintiff requests that case be continued while payment is being made."
+        },
+        "res": [
+            "{'actor': 'Plaintiff', 'action': 'Continuance'}"
+        ]
+    },
+    "105101442": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Request for Temporary Restrain",
+            "description": "Request for Temporary Restraining Order filed"
+        },
+        "res": [
+            "{'actor': 'Petitioner/Applicant', 'action': 'Requested', 'action-detailed': 'Filed a Request for Temporary Restraining Order'}"
+        ]
+    },
+    "51223709": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Satisfaction of judgment",
+            "description": "Satisfaction of judgment filed: satisfied in full."
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Satisfaction of judgment'}"
+        ]
+    },
+    "15311844": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Statement of damages filed",
+            "description": "On 3/8/10 Statement of damages filed by P01  INDEPENDENCE RECEIVABLES CORP. (Dist./Mun.Cts.Supp.R.Civ.P. 102A)."
+        },
+        "res": [
+            "{'actor': 'Independence Receivables Corp.', 'action': 'Statement of damages filed'}"
+        ]
+    },
+    "12170079": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Statement of small claim filed",
+            "description": "Statement of Small Claim entered."
+        },
+        "res": [
+            "{'actor': 'Petitioner', 'action': 'Statement of small claim filed'}"
+        ]
+    },
+    "1669663": {
+        "case": {
+            "actor": "Proposed Fiduciary",
+            "action": "Statement of Voluntary Adminis",
+            "description": "Statement of Voluntary Administration"
+        },
+        "res": [
+            {
+                "actor": "Petitioner",
+                "action": "Statement of Voluntary Administration"
+            }
+        ]
+    },
+    "4241876": {
+        "case": {
+            "actor": "Court",
+            "action": "Summons",
+            "description": "Supplementary process summons issued for Timothy Jones and sent to CACH LLC for service (G.L. c.224 14)."
+        },
+        "res": [
+            "{'actor': 'CACH LLC', 'action': 'Service of Supplementary Process Summons'}"
+        ]
+    },
+    "10499267": {
+        "case": {
+            "actor": "Notes",
+            "action": "System Notes",
+            "description": "This Case Converted from Civil BasCOT application."
+        },
+        "res": [
+            "{'actor': 'Administrator/rix CTA', 'action': 'Case Converted'}"
+        ]
+    },
+    "25554322": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Third-party cross-claim filed",
+            "description": "Third-party cross-claim filed by THIRD PARTY PLAINTIFFS against D03  JESSICA WILLIS (Mass.R.Civ.P. 14)."
+        },
+        "res": [
+            "{'actor': 'Third Party', 'action': 'cross-claim filed'}"
+        ]
+    },
+    "102233167": {
+        "case": {
+            "actor": "Court",
+            "action": "Trial",
+            "description": "Resch trial 11-16-06. NOTICE MAILED"
+        },
+        "res": [
+            "{'actor': 'Resch', 'action': 'Notice mailed'}"
+        ]
+    },
+    "94315095": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "UCC filed",
+            "description": "ADR Uniform Counsel Certification filed by plaintiff's attorney on Small Claims action."
+        },
+        "res": [
+            "{'actor': 'Plaintiff', 'action': 'UCC filed'}"
+        ]
+    },
+    "104634233": {
+        "case": {
+            "actor": "Plaintiff",
+            "action": "Voluntary Dismissal",
+            "description": "R 41(a)(1) Voluntary Dismissal"
+        },
+        "res": [
+            "{'actor': 'Petitioner/Plaintiff', 'action': 'Voluntary Dismissal'}"
+        ]
+    },
+    "93785": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Waiver of Award of Pre-Judgmen",
+            "description": "Waiver of Award of Pre-Judgment Interest filed"
+        },
+        "res": [
+            "{'actor': 'Parties', 'action': 'Waiver of Award of Pre-Judgment Interest filed'}"
+        ]
+    },
+    "75380677": {
+        "case": {
+            "actor": "Defendant",
+            "action": "Witness list filed",
+            "description": "Defendant's Witness list filed in court"
+        },
+        "res": [
+            "{'actor': 'Defendant', 'action': 'Witness list filed'}"
+        ]
+    }
+}
