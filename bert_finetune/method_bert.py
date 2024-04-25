@@ -96,15 +96,6 @@ def get_actor_action_2_id():
 
     # action
     actions = [k for k in counts["action_counts"].keys() if k != ""]
-    # ==================
-    """
-        # added new action
-    """
-    new_actions = ['No parties present']
-    for na in new_actions:
-        if na not in actions:
-            actions.append(na)
-    # ==================
     actions = sorted(actions)
     action_2_id = {a: _id for _id, a in enumerate(actions) if a != ""}
 
@@ -135,6 +126,17 @@ def prepare_data(_limit=1000):
 
     # fixed map
     actor_2_id, action_2_id = get_actor_action_2_id()
+    print(len(action_2_id), len(action_2_id))
+
+    """"""
+    # exist new labels
+    actor_types = sorted(list(set(actor_2_id.keys() | set(row_actors))))
+    action_types = sorted(list(set(action_2_id.keys() | set(row_actions))))
+
+    actor_2_id = {a: _id for _id, a in enumerate(actor_types) if a != ""}
+    action_2_id = {a: _id for _id, a in enumerate(action_types) if a != ""}
+    print("Add new:", len(action_2_id), len(action_2_id))
+    """"""
 
     actors = [actor_2_id[actor] for actor in row_actors]
     actions = [action_2_id[action] for action in row_actions]
