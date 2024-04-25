@@ -126,7 +126,7 @@ def prepare_data(_limit=1000):
 
     # fixed map
     actor_2_id, action_2_id = get_actor_action_2_id()
-    print(len(action_2_id), len(action_2_id))
+    print(len(actor_2_id), len(action_2_id))
 
     """"""
     # exist new labels
@@ -135,7 +135,7 @@ def prepare_data(_limit=1000):
 
     actor_2_id = {a: _id for _id, a in enumerate(actor_types) if a != ""}
     action_2_id = {a: _id for _id, a in enumerate(action_types) if a != ""}
-    print("Add new:", len(action_2_id), len(action_2_id))
+    print("Add new:", len(actor_2_id), len(action_2_id))
     """"""
 
     actors = [actor_2_id[actor] for actor in row_actors]
