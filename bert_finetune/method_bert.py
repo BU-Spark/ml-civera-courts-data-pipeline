@@ -1,12 +1,13 @@
 import argparse
 import os
+import random
 
 from tqdm import tqdm
 from transformers import BertPreTrainedModel, BertModel
 import torch
 import torch.nn as nn
 
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, Subset
 from transformers import BertTokenizer
 import numpy as np
 
@@ -43,6 +44,7 @@ class BertForMultiTaskLearning(BertPreTrainedModel):
         self.actor_classifier = nn.Linear(config.hidden_size, num_actors)
         self.action_classifier = nn.Linear(config.hidden_size, num_actions)
 
+        print("init_weights")
         self.init_weights()
 
     def forward(self, input_ids, attention_mask=None):
@@ -64,7 +66,8 @@ class CustomDataset(Dataset):
         self.action_labels = action_labels
 
     def __getitem__(self, idx):
-        item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
+        # item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
+        item = {key: val[idx].clone().detach() for key, val in self.encodings.items()}
         item['actor_labels'] = torch.tensor(self.actor_labels[idx], dtype=torch.long)
         item['action_labels'] = torch.tensor(self.action_labels[idx], dtype=torch.long)
         return item
@@ -73,18 +76,47 @@ class CustomDataset(Dataset):
         return len(self.actor_labels)
 
 
-def prepare_data(_limit=100):
+def set_seed():
+    seed = 42  # You can choose any number here
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
 
-    sample_data = load_json(f"sample/sampled_data_limit={_limit}.json")
+    # If you're using a multi-GPU setup, also set:
+    torch.cuda.manual_seed_all(seed)
+
+
+def get_actor_action_2_id():
+    counts = load_json(f"../EDA/count/count.json")
+
+    # actor
+    actors = [k for k in counts["actor_counts"].keys() if k != ""]
+    actors = sorted(actors)
+    actor_2_id = {a: _id for _id, a in enumerate(actors) if a != ""}
+
+    # action
+    actions = [k for k in counts["action_counts"].keys() if k != ""]
+    # ==================
+    """
+        # added new action
+    """
+    actions.append('No parties present')
+    # ==================
+    actions = sorted(actions)
+    action_2_id = {a: _id for _id, a in enumerate(actions) if a != ""}
+
+    # consider add 1 for new labels
+    return actor_2_id, action_2_id
+
+
+def prepare_data(_limit=1000):
+
+    sample_data = load_json(f"../EDA/sample/sampled_data_limit={_limit}.json")
 
     empty_rows = {key: row for key, row in sample_data.items() if row["actor"] == "" or row["action"] == ""}
     non_empty_rows = {key: row for key, row in sample_data.items() if row["actor"] != "" and row["action"] != ""}
 
-    # for i, row in enumerate(non_empty_rows.items()):
-    #     if i % 100 != 0:
-    #         continue
-    #     print(row)
-    # quit()
+    # non_empty_rows = {k: v for i, (k, v) in enumerate(non_empty_rows.items()) if i < 3000}
 
     # key: action_id
     # value: row
@@ -98,13 +130,8 @@ def prepare_data(_limit=100):
     row_actors = [row["actor"] for row in non_empty_rows.values()]
     row_actions = [row["action"] for row in non_empty_rows.values()]
 
-    id_2_actor = list(set(row_actors))
-    # consider add 1 for new labels
-    actor_2_id = {actor: _id for _id, actor in enumerate(id_2_actor)}
-
-    id_2_action = list(set(row_actions))
-    # consider add 1 for new labels
-    action_2_id = {action: _id for _id, action in enumerate(id_2_action)}
+    # fixed map
+    actor_2_id, action_2_id = get_actor_action_2_id()
 
     actors = [actor_2_id[actor] for actor in row_actors]
     actions = [action_2_id[action] for action in row_actions]
@@ -118,20 +145,37 @@ def prepare_data(_limit=100):
     train_size = int(0.6 * len(dataset))
     val_size = int(0.1 * len(dataset))
     test_size = len(dataset) - train_size - val_size
+
     train_dataset, val_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, val_size, test_size])
 
-    print(type(train_dataset))
+    # # Create subsets for train, validation, and test
+    # train_dataset = Subset(dataset, range(0, train_size))
+    # val_dataset = Subset(dataset, range(train_size, train_size + val_size))
+    # test_dataset = Subset(dataset, range(train_size + val_size, len(dataset)))
+
     # print(train_dataset[0])
     print(len(train_dataset), len(val_dataset), len(test_dataset))
 
-    return train_dataset, val_dataset, test_dataset, len(id_2_actor), len(id_2_action)
+    """
+    def check_labels(dataset):
+        for data in dataset:
+            actor_label = data['actor_labels']
+            action_label = data['action_labels']
+            assert 0 <= actor_label < len(actor_2_id), f"Invalid actor label {actor_label}"
+            assert 0 <= action_label < len(action_2_id), f"Invalid action label {action_label}"
+
+    check_labels(train_dataset)
+    check_labels(val_dataset)
+    check_labels(test_dataset)
+    """
+
+    return train_dataset, val_dataset, test_dataset, len(actor_2_id), len(action_2_id)
 
 
-def train(train_dataset, val_dataset, num_actors, num_actions, save_dir="models"):
+def train(model, train_dataset, val_dataset, epoch=5, save_dir="models/temp", if_tqdm=True):
 
     # init
-    model = BertForMultiTaskLearning.from_pretrained(
-        'bert-base-uncased', num_actors=num_actors, num_actions=num_actions).to(device)
+
     model.train()
 
     # param
@@ -141,9 +185,11 @@ def train(train_dataset, val_dataset, num_actors, num_actions, save_dir="models"
 
     loss_fct = nn.CrossEntropyLoss()
 
-    for epoch in range(10):
-        for step, batch in enumerate((tq := tqdm(train_loader))):
-            tq.set_description(f"Epoch: {epoch}")
+    for epoch in range(epoch):
+        if if_tqdm:
+            train_loader = tqdm(train_loader)
+
+        for step, batch in enumerate(train_loader):
 
             optim.zero_grad()
             input_ids = batch['input_ids'].to(device)
@@ -163,10 +209,10 @@ def train(train_dataset, val_dataset, num_actors, num_actions, save_dir="models"
             optim.step()
 
             if step % 100 == 0:
-                print(f" Step={step} | Total Loss: {total_loss: .4f} - actor: {actor_loss:.4f}, action: {action_loss:.4f}")
+                print(f" Epoch={epoch}, Step={step}/{len(train_loader)} | Total Loss: {total_loss: .4f} - actor: {actor_loss:.4f}, action: {action_loss:.4f}")
 
         val_loader = DataLoader(val_dataset, batch_size=16, shuffle=False)
-        actor_accuracy, action_accuracy = evaluate_model(model, val_loader)
+        actor_accuracy, action_accuracy = evaluate_model(model, val_loader, if_tqdm=if_tqdm)
         print(f"Validation Accuracy - Actor: {actor_accuracy:.4f}, Action: {action_accuracy:.4f}")
 
         # save
@@ -175,13 +221,16 @@ def train(train_dataset, val_dataset, num_actors, num_actions, save_dir="models"
     return model
 
 
-def evaluate_model(model, val_loader):
+def evaluate_model(model, val_loader, if_tqdm=True):
     model.eval()
     correct_actor, correct_action = 0, 0
     total = 0
 
     with torch.no_grad():
-        for batch in val_loader:
+        if if_tqdm:
+            val_loader = tqdm(val_loader)
+
+        for bi, batch in enumerate(val_loader):
             input_ids = batch['input_ids'].to(device)
             attention_mask = batch['attention_mask'].to(device)
             actor_labels = batch['actor_labels'].numpy()
@@ -195,6 +244,9 @@ def evaluate_model(model, val_loader):
             correct_action += (action_preds == action_labels).sum()
             total += len(actor_labels)
 
+            if bi % 100 == 0:
+                print(f"{bi}/{len(val_loader)}")
+
     return correct_actor / total, correct_action / total
 
 
@@ -202,19 +254,39 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=100)
+    parser.add_argument("--epoch", type=int, default=1)
+    parser.add_argument("--eval", action="store_true")
+    parser.add_argument("--tqdm", action="store_true")
 
     args = parser.parse_args()
 
+    save_dir = f"models/{args.limit}/"
+    temp_dir = f"{save_dir}/temp"
+    os.makedirs(temp_dir, exist_ok=True)
+    final_model_path = f"{save_dir}/checkpoint_bert_{args.limit}"
+
     train_dataset, val_dataset, test_dataset, num_actors, num_actions = prepare_data(args.limit)
 
-    save_dir = f"models/{args.limit}/"
-    os.makedirs(save_dir, exist_ok=True)
-
-    model = train(train_dataset, val_dataset, num_actors, num_actions, save_dir=save_dir)
-
     test_loader = DataLoader(test_dataset, batch_size=16, shuffle=False)
-    actor_accuracy_test, action_accuracy_test = evaluate_model(model, test_loader)
+
+    if args.eval:
+
+        model = BertForMultiTaskLearning.from_pretrained(
+            final_model_path, num_actors=num_actors, num_actions=num_actions).to(device)
+
+        actor_accuracy_test, action_accuracy_test = evaluate_model(model, test_loader, if_tqdm=args.tqdm)
+        print(f"Test Accuracy - Actor: {actor_accuracy_test:.4f}, Action: {action_accuracy_test:.4f}")
+        return
+
+    model = BertForMultiTaskLearning.from_pretrained(
+        'bert-base-uncased', num_actors=num_actors, num_actions=num_actions).to(device)
+
+    train(model, train_dataset, val_dataset, args.epoch, save_dir=temp_dir, if_tqdm=args.tqdm)
+
+    actor_accuracy_test, action_accuracy_test = evaluate_model(model, test_loader, if_tqdm=args.tqdm)
     print(f"Test Accuracy - Actor: {actor_accuracy_test:.4f}, Action: {action_accuracy_test:.4f}")
+
+    model.save_pretrained(final_model_path)
 
 
 if __name__ == '__main__':
