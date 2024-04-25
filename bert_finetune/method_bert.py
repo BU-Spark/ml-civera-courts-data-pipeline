@@ -100,7 +100,10 @@ def get_actor_action_2_id():
     """
         # added new action
     """
-    actions.append('No parties present')
+    new_actions = ['No parties present']
+    for na in new_actions:
+        if na not in actions:
+            actions.append(na)
     # ==================
     actions = sorted(actions)
     action_2_id = {a: _id for _id, a in enumerate(actions) if a != ""}
@@ -253,7 +256,7 @@ def evaluate_model(model, val_loader, if_tqdm=True):
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", type=int, default=100)
+    parser.add_argument("--limit", type=int, default=1000)
     parser.add_argument("--epoch", type=int, default=1)
     parser.add_argument("--eval", action="store_true")
     parser.add_argument("--tqdm", action="store_true")
