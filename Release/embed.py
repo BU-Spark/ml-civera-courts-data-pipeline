@@ -43,7 +43,11 @@ class Embedder:
         hk = get_hash_key(query)
         tmp_file = f"{self.dir_embedding}/{hk}.json"
         if os.path.isfile(tmp_file):
-            return load_json(tmp_file)
+            try:
+                return load_json(tmp_file)
+            except:
+                # Aborting the program suddenly can result in the file existing but being corrupted.
+                pass
         embed = self.embedding_model.encode(query).tolist()
         dump_json(embed, tmp_file)
         return embed

@@ -123,7 +123,7 @@ def read_predict_write(offset, batch_size=10000, if_tqdm=False):
 
                 start_t = time.time()
 
-                print("=" * 10, f"offset={offset} / {total_records}", "=" * 10)
+                print("=" * 10, f"{round(offset / total_records, 4)} (offset={offset} / {total_records})", "=" * 10)
 
                 # Construct the query with dynamic batch size and offset
                 query_sql = f"SELECT case_action_id, actor, action, description FROM {TABLE_NAME} LIMIT {batch_size} OFFSET {offset}"
