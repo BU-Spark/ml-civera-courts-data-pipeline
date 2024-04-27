@@ -37,18 +37,6 @@ class VectorDBSearchPredictor:
         self.vector_db_data = load_json(f"{DIR_DATA}/sampled_data_limit={_limit}.json")
 
     def get_embeddings(self, rows):
-        # rows = tqdm(rows)
-        for row in rows:
-            try:
-                self.embedder.get_embedding(row["description"])
-            except Exception as e:
-                print(e)
-                print(row)
-                print(row["description"])
-                print("1")
-                print(self.embedder.get_embedding(row["description"]))
-                print(2)
-                quit()
         return [self.embedder.get_embedding(row["description"]) for row in rows]
 
     def predict(self, rows):
