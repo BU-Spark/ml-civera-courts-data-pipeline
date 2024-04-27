@@ -164,7 +164,7 @@ def read_predict_write(offset, batch_size=10000, if_tqdm=False):
 
                 offset += batch_size  # Update the offset for the next batch
 
-                count_t(start_t, f"Predicted {offset} -> {offset + batch_size}")
+                count_t(start_t, f"\nPredicted {offset} -> {offset + batch_size}")
 
                 """ Dump offset """
                 dump_offset(offset)
