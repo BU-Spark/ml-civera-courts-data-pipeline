@@ -9,6 +9,12 @@ This script is used to:
 """
 
 
+import os
+
+MODEL_CACHE_DIR = "/projectnb/ds549/students/liubyfly/models/"
+os.environ["TRANSFORMERS_CACHE"] = MODEL_CACHE_DIR
+
+
 import argparse
 import time
 import os
@@ -153,15 +159,15 @@ def read_predict_write(offset, batch_size=10000, if_tqdm=False):
                 output_conn.commit()  # Commit the transaction
                 count_t(t, f"Wrote {batch_size} rows.")
 
-                print("count")
-                get_row_count(output_conn)
+                # print("count")
+                # get_row_count(output_conn)
 
                 offset += batch_size  # Update the offset for the next batch
 
+                count_t(start_t, f"Predicted {offset} -> {offset + batch_size}")
+
                 """ Dump offset """
                 dump_offset(offset)
-
-                count_t(start_t, f"Predicted {offset} -> {offset + batch_size}")
 
     except Exception as e:
         print(f"An error occurred: {e}")

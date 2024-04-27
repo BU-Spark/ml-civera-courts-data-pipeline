@@ -16,7 +16,7 @@ from embed import Embedder
 from db_faiss import DBFaiss
 import random
 
-from cfg.cfg import LIMIT, TABLE_NAME, SRC_DB_NAME, DIR_DATA
+from cfg.cfg import LIMIT, DIR_DATA, ThresholdVDB
 from utils import (
     get_connection, execute_query,
     load_json, dump_json,
@@ -29,7 +29,7 @@ class VectorDBSearchPredictor:
         self.db = DBFaiss(limit=_limit)
         self.db.load()
 
-        self.threshold = 0.8
+        self.threshold = ThresholdVDB
         # self.threshold = 0.0
         self.top_k = 3
 

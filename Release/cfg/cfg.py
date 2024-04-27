@@ -9,7 +9,9 @@ Description:
 """
 
 
-import os
+ThresholdVDB = 0.8
+ThresholdBert = 0.0
+
 
 LIMIT = 1000
 
@@ -45,6 +47,7 @@ DIR_TEMP = "temp/"
 
 # Automatically create directories for all variables starting with 'DIR_'
 def create_directories():
+    import os
     globals_dict = globals()  # Get the dictionary of global variables for the current module
     for var_name, path in globals_dict.items():
         if var_name.startswith("DIR_"):  # Check if the variable name starts with 'DIR_'
@@ -52,5 +55,3 @@ def create_directories():
 
 
 create_directories()  # Call the function to execute directory creation
-
-

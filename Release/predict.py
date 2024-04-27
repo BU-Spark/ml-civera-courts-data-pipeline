@@ -13,15 +13,19 @@ import time
 from utils import count_t
 from vector_db_search import VectorDBSearchPredictor
 from bert_inference import BertPredictor
+from llm_inference import LLMPredictor
 
 
 class Predictor:
     def __init__(self):
         self.vdb_predictor = VectorDBSearchPredictor()
         self.bert_predictor = BertPredictor()
+        self.llm_predictor = LLMPredictor()
 
     def predict(self, rows):
         """ Apply predictive modeling to the fetched data from the database. """
+
+        row_num = len(rows)
 
         predicted_rows = []
 
@@ -51,8 +55,16 @@ class Predictor:
 
         # 3. use fine-tuned llm method
         print("-" * 10, f"Predicting {len(rows)} rows by LLM...")
+        t = time.time()
+        temp_predicted_rows, rows = self.llm_predictor.predict(rows)
+        count_t(t, "LLM predictor")
+
+        predicted_rows.extend(temp_predicted_rows)
 
         assert len(rows) == 0
+        print("All solved by VDB + Bert + LLM")
+
+        assert row_num == len(predicted_rows)
 
         return predicted_rows
 

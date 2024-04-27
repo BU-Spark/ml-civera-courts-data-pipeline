@@ -17,6 +17,7 @@ from finetune_bert import (
     BertForMultiTaskLearning,
     get_actor_action_2_id,
 )
+from cfg.cfg import ThresholdBert
 
 
 class CiveraDatasetForInference(Dataset):
@@ -35,7 +36,7 @@ class CiveraDatasetForInference(Dataset):
 class BertPredictor:
     def __init__(self, batch_size=64):
 
-        self.threshold = 0.0
+        self.threshold = ThresholdBert
 
         self.batch_size = batch_size
 
@@ -47,6 +48,7 @@ class BertPredictor:
         self.bert_model = BertForMultiTaskLearning.from_pretrained(
             model_path, num_actors=len(self.actor_2_id), num_actions=len(self.action_2_id)
         ).to(self.device)
+        self.bert_model.eval()
 
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
