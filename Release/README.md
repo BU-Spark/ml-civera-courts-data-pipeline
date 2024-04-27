@@ -1,4 +1,4 @@
-### Steps
+## Steps
 
 ### Extract labels
 ```
@@ -10,14 +10,19 @@ python count.py
 python sample_data.py
 ```
 
-### finetune bert
+### Finetune bert
 ```
 python finetune_bert.py
 ```
 
+### Generate Faiss vector database 
+```
+python embed.py
+```
+- Faiss settings are in [db_faiss.py](db_faiss.py)
 
-### predict and write to database
+### Predict and write to database
 ```
 python write_to_database.py
 ```
-predict logic is in predict.py
+- Predictor logics are in [predict.py](predict.py)
