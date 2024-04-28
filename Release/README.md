@@ -7,6 +7,8 @@
 
 ## How to run
 
+Set thresholds in [cfg/cfg.py](cfg/cfg.py) to combine the three methods.
+
 ### *1. Prepare*
 
 #### Extract labels
