@@ -5,7 +5,9 @@
 #### 2. Fine-tune Bert
 #### 3. Fine-tune LLM
 
-## Steps
+## How to run
+
+### *1. Prepare*
 
 #### Extract labels
 ```
@@ -17,10 +19,7 @@ python count.py
 python sample_data.py
 ```
 
-#### Finetune bert
-```
-python finetune_bert.py
-```
+### *2. Train*
 
 #### Generate Faiss vector database 
 ```
@@ -28,8 +27,23 @@ python embed.py
 ```
 - Faiss settings are in [db_faiss.py](db_faiss.py)
 
+#### Finetune bert
+```
+python finetune_bert.py
+```
+
+### Finetune LLM
+```
+python finetune_llm.py
+```
+
+
+### *3. Predict*
 #### Predict and write to database
 ```
 python write_to_database.py
 ```
 - Predictor logics are in [predict.py](predict.py)
+  - VDBPredictor: [vector_db_search.py](vector_db_search.py)
+  - BertPredictor: [bert_inference.py](bert_inference.py)
+  - LLMPredictor: [llm_inference.py](llm_inference.py)
