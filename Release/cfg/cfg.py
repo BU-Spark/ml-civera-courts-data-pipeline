@@ -12,6 +12,9 @@ Description:
 ThresholdVDB = 0.8
 ThresholdBert = 0.0
 
+print(f"Threshold VDB: {ThresholdVDB}")
+print(f"Threshold Bert: {ThresholdBert}")
+
 
 LIMIT = 1000
 

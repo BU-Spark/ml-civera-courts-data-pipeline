@@ -157,5 +157,9 @@ class LLMPredictor:
             return res
         except Exception as e:
             print(e)
+            print(answer)
             # cannot be parsed into json dict
-            return answer
+            return dict(
+                actor="",
+                action="",
+            )
