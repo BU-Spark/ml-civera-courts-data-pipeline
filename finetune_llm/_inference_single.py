@@ -98,6 +98,7 @@ def infer(ft_model, tokenizer, test_id2triplets, device, predictions, dump_path,
             answer = decoded[0]
 
             # print(answer)
+            # quit()
 
             answer = parse_answer(answer)
 
