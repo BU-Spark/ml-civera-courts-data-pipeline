@@ -5,8 +5,7 @@ Date: 2024-03-15
 Description:
 - Embedder
 """
-
-
+import argparse
 import json
 import time
 
@@ -115,12 +114,13 @@ class Embedder:
         return embeddings, list(non_empty_rows.keys())
 
 
-def embed_desc(_limit=LIMIT):
+def embed_desc(_limit=LIMIT, cache=False):
 
     """
     sampled_data: {case_action_id: {actor, action, description}}
 
     :param _limit:
+    :param cache
     :return:
     """
 
@@ -133,15 +133,20 @@ def embed_desc(_limit=LIMIT):
     embedder = Embedder()
     # embeddings, keys = embedder.embed(sampled_data)
     # embeddings, keys = embedder.embed_non_empty(sampled_data)
-    embeddings, keys = embedder.embed_non_empty(sampled_data, cache=False)
+    embeddings, keys = embedder.embed_non_empty(sampled_data, cache=cache)
 
     return embeddings, keys
 
 
 def main():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cache", action="store_true", help="cache embeddings, in Embedder.get_embedding()")
+    args = parser.parse_args()
+
     from db_faiss import DBFaiss
     limit = LIMIT
-    embeddings, keys = embed_desc(limit)
+    embeddings, keys = embed_desc(limit, cache=args.cache)
 
     db = DBFaiss(limit=limit)
     db.save_embeddings(embeddings, keys)
