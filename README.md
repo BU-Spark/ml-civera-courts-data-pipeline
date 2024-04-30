@@ -1,5 +1,6 @@
 # Civera
-The Civera Project for CS549  
+The Civera Project for DS549  
+
 Group members:  
 Boyang Liu, [liubyfly@bu.edu](mailto:liubyfly@bu.edu)  
 Christopher Ziko, [cz118@bu.edu](mailto:cz118@bu.edu)  
