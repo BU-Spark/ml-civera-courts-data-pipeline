@@ -39,7 +39,12 @@ class Embedder:
             self.embedding_model = SentenceTransformer(f'sentence-transformers/{self.model_name}')
             print(f"Loading model <{self.model_name}> takes {time.time() - t}s")
 
-    def get_embedding(self, query: str):
+    def get_embedding(self, query: str, cache=False):
+        if cache is False:
+            return self.embedding_model.encode(query).tolist()
+        # cache = true: store embedding for next usage
+        # important for some apis
+        # careful when there are lots of embeddings
         hk = get_hash_key(query)
         tmp_file = f"{self.dir_embedding}/{hk}.json"
         if os.path.isfile(tmp_file):
@@ -85,11 +90,13 @@ class Embedder:
             self,
             rows: Dict[str, Dict],
             tq_desc: str = "",
+            cache: bool = False,
     ):
         """
 
         :param rows:
         :param tq_desc:
+        :param cache
         :return: embeddings, keys
         """
 
@@ -101,7 +108,7 @@ class Embedder:
         embeddings = []
         for query in (tq := tqdm(corpus)):
             tq.set_description(tq_desc)
-            embeddings.append(self.get_embedding(query))
+            embeddings.append(self.get_embedding(query, cache=cache))
 
         print(f"non_empty_rows={len(non_empty_rows)} / rows={len(rows)}.")
 
@@ -125,7 +132,8 @@ def embed_desc(_limit=LIMIT):
 
     embedder = Embedder()
     # embeddings, keys = embedder.embed(sampled_data)
-    embeddings, keys = embedder.embed_non_empty(sampled_data)
+    # embeddings, keys = embedder.embed_non_empty(sampled_data)
+    embeddings, keys = embedder.embed_non_empty(sampled_data, cache=False)
 
     return embeddings, keys
 
