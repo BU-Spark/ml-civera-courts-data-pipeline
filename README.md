@@ -1,10 +1,10 @@
 # Civera
 The Civera Project for CS549  
 Group members:  
-Boyang Liu, liubyfly@bu.edu   
-Christopher Ziko  
-Jamie Lin  
-Jeffrey Zhou  
+Boyang Liu, [liubyfly@bu.edu](mailto:liubyfly@bu.edu)  
+Christopher Ziko, [cz118@bu.edu](mailto:cz118@bu.edu)  
+Jamie Lin  [jlin305@bu.edu](mailto:jlin305@bu.edu)  
+Jeffrey Zhou [jzhou25@bu.edu](mailto:jzhou25@bu.edu)  
 
 ----
 
