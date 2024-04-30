@@ -5,8 +5,7 @@ Date: 2024-03-15
 Description:
 - Embedder
 """
-
-
+import argparse
 import json
 import time
 
@@ -39,7 +38,12 @@ class Embedder:
             self.embedding_model = SentenceTransformer(f'sentence-transformers/{self.model_name}')
             print(f"Loading model <{self.model_name}> takes {time.time() - t}s")
 
-    def get_embedding(self, query: str):
+    def get_embedding(self, query: str, cache=False):
+        if cache is False:
+            return self.embedding_model.encode(query).tolist()
+        # cache = true: store embedding for next usage
+        # important for some apis
+        # careful when there are lots of embeddings
         hk = get_hash_key(query)
         tmp_file = f"{self.dir_embedding}/{hk}.json"
         if os.path.isfile(tmp_file):
@@ -85,11 +89,13 @@ class Embedder:
             self,
             rows: Dict[str, Dict],
             tq_desc: str = "",
+            cache: bool = False,
     ):
         """
 
         :param rows:
         :param tq_desc:
+        :param cache
         :return: embeddings, keys
         """
 
@@ -101,19 +107,20 @@ class Embedder:
         embeddings = []
         for query in (tq := tqdm(corpus)):
             tq.set_description(tq_desc)
-            embeddings.append(self.get_embedding(query))
+            embeddings.append(self.get_embedding(query, cache=cache))
 
         print(f"non_empty_rows={len(non_empty_rows)} / rows={len(rows)}.")
 
         return embeddings, list(non_empty_rows.keys())
 
 
-def embed_desc(_limit=LIMIT):
+def embed_desc(_limit=LIMIT, cache=False):
 
     """
     sampled_data: {case_action_id: {actor, action, description}}
 
     :param _limit:
+    :param cache
     :return:
     """
 
@@ -125,15 +132,21 @@ def embed_desc(_limit=LIMIT):
 
     embedder = Embedder()
     # embeddings, keys = embedder.embed(sampled_data)
-    embeddings, keys = embedder.embed_non_empty(sampled_data)
+    # embeddings, keys = embedder.embed_non_empty(sampled_data)
+    embeddings, keys = embedder.embed_non_empty(sampled_data, cache=cache)
 
     return embeddings, keys
 
 
 def main():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cache", action="store_true", help="cache embeddings, in Embedder.get_embedding()")
+    args = parser.parse_args()
+
     from db_faiss import DBFaiss
     limit = LIMIT
-    embeddings, keys = embed_desc(limit)
+    embeddings, keys = embed_desc(limit, cache=args.cache)
 
     db = DBFaiss(limit=limit)
     db.save_embeddings(embeddings, keys)

@@ -1,9 +1,15 @@
 # Civera - Mass Courts Data Pipeline
 
+## EDA
+- [EDA](../EDA/README.md)
+
 ## Methods
-#### 1. Vector Database Search
-#### 2. Fine-tune Bert
-#### 3. Fine-tune LLM
+
+![Prediction Pipeline](images/Civera%20Label%20Prediction%20Pipeline.png)
+
+- [Vector Database Search](../vector_db_search/README.md)
+- [Finetune Bert](../bert_finetune/README.md)
+- [Finetune LLM](../finetune_llm/README.md)
 
 ## How to run
 
